@@ -1,0 +1,44 @@
+{
+  "name": "twitter",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "yarn workspace server dev",
+    "build": "yarn workspace client build",
+    "start": "yarn workspace server start",
+    "clean": "yarn workspace client clean",
+    "format": "concurrently -g -n client,server -c blue,yellow \"yarn format:client\" \"yarn format:server\"",
+    "format:client": "yarn workspace client format",
+    "format:server": "yarn workspace server format",
+    "commit": "git-cz",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{js,jsx,json,html,md,svg,css,yml}": "prettier --write"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": ".commitizenrc.json"
+    }
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^16.2.4",
+    "@commitlint/config-conventional": "^16.2.4",
+    "commitizen": "^4.2.4",
+    "concurrently": "^7.1.0",
+    "cz-customizable": "^6.3.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^12.4.1",
+    "prettier": "^2.6.2",
+    "rimraf": "^3.0.2"
+  }
+}
