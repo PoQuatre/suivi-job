@@ -8,11 +8,6 @@ router.post('/', (req, res) => {
   console.log('INFO USER', info);
   console.log('INFO BODY', body);
 
-  const newJobApplication = new JobApplicationModel(body);
-  // newJobApplication.ownerID = req.user._id
-  // let dateStart = body.startDate;
-  // let dateEnd = body.endDate;
-
   JobApplicationModel.create(body)
     .then((application) => {
       res.json(application);
@@ -25,7 +20,13 @@ router.post('/', (req, res) => {
 router.put('/:id', (req, res) => {
   const id = req.params.id;
   const body = req.body;
-  JobApplicationModel.findByIdAndUpdate(id, { $set: body }).then;
+  JobApplicationModel.findByIdAndUpdate(id, { $set: body })
+    .then((application) => {
+      res.json(application);
+    })
+    .catch((err) => {
+      res.status(500).send(err);
+    });
 });
 
 router.delete('/:id', async function (req, res) {
