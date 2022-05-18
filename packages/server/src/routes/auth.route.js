@@ -11,13 +11,13 @@ router.post('/register', async (req, res) => {
       $or: [
         {
           email: {
-            $regex: email,
+            $regex: `^${email}$`,
             $options: 'i',
           },
         },
         {
           username: {
-            $regex: username,
+            $regex: `^${username}$`,
             $options: 'i',
           },
         },
