@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 
@@ -10,8 +11,13 @@ const Register = () => {
     formState: { errors },
   } = useForm();
   const navigate = useNavigate();
+  const [globalError, setGlobalError] = useState('');
 
   const onSubmit = (data) => {
+    setGlobalError('');
+
+    delete data.passwordConfirm;
+
     fetch('/auth/register', {
       method: 'POST',
       headers: {
@@ -31,26 +37,44 @@ const Register = () => {
       })
       .catch((err) => {
         console.error(err);
-        setError('register', {
-          type: 'custom',
-          message:
-            'Une erreur est survenue lors du traîtement de votre requête',
-        });
+        setGlobalError(
+          'Une erreur est survenue lors du traîtement de votre requête',
+        );
       });
   };
 
   return (
     <>
-      {errors.register && <p>{errors.register.message}</p>}
+      {globalError && <p>{globalError}</p>}
 
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
           <label htmlFor="username">Nom d'utilisateur: </label>
           <input
             type="text"
-            placeholder="example@mail.org"
-            {...register('username', { required: true })}
+            {...register('username', {
+              required: true,
+              minLength: 4,
+              maxLength: 20,
+              pattern: /^[A-Za-z0-9_-]+$/,
+            })}
           />
+          {errors.username?.type === 'required' && (
+            <p>Le nom d'utilisateur est requis.</p>
+          )}
+          {errors.username?.type === 'minLength' && (
+            <p>Le nom d'utilisateur dois faire minimum 4 caractères.</p>
+          )}
+          {errors.username?.type === 'maxLength' && (
+            <p>Le nom d'utilisateur dois faire maximum 20 caractères.</p>
+          )}
+          {errors.username?.type === 'pattern' && (
+            <p>
+              Le nom d'utilisateur ne peut uniquement des{' '}
+              <code>caractères alphanumérique</code>, <code>_</code> et{' '}
+              <code>-</code>.
+            </p>
+          )}
           {errors.username?.type === 'custom' && (
             <p>{errors.username.message}</p>
           )}
@@ -61,8 +85,17 @@ const Register = () => {
           <input
             type="email"
             placeholder="example@mail.org"
-            {...register('email', { required: true })}
+            {...register('email', {
+              required: true,
+              pattern: /^[^\s@]+@([^\s@.,]+\.)+[^\s@.,]{2,}$/,
+            })}
           />
+          {errors.email?.type === 'required' && (
+            <p>L'adresse email est requise.</p>
+          )}
+          {errors.email?.type === 'pattern' && (
+            <p>L'adresse email doit être valide.</p>
+          )}
           {errors.email?.type === 'custom' && <p>{errors.email.message}</p>}
         </div>
 
@@ -71,12 +104,30 @@ const Register = () => {
           <input
             type="password"
             placeholder="Votre mot de passe"
-            {...register('password', { required: true })}
+            {...register('password', {
+              required: true,
+              minLength: 8,
+              pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}$/,
+            })}
           />
+          {errors.password?.type === 'required' && (
+            <p>Le mot de passe est requis.</p>
+          )}
+          {errors.password?.type === 'minLength' && (
+            <p>Le mot de passe dois faire minimum 8 caractères.</p>
+          )}
+          {errors.password?.type === 'pattern' && (
+            <p>
+              Le mot de passe doit contenir au minimum une lettre majuscule, une
+              lettre minuscule, et un chiffre.
+            </p>
+          )}
         </div>
 
         <div>
-          <label htmlFor="passwordConfirm">Mot de passe: </label>
+          <label htmlFor="passwordConfirm">
+            Confirmation du mot de passe:{' '}
+          </label>
           <input
             type="password"
             placeholder="Votre mot de passe"
@@ -88,6 +139,12 @@ const Register = () => {
               },
             })}
           />
+          {errors.passwordConfirm?.type === 'required' && (
+            <p>La confirmation du mot de passe est requise.</p>
+          )}
+          {errors.passwordConfirm?.type === 'validate' && (
+            <p>Les mots de passe ne correspondent pas.</p>
+          )}
         </div>
 
         <input type="submit" value="S'enregistrer" />

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 
@@ -5,12 +6,14 @@ const Login = () => {
   const {
     handleSubmit,
     register,
-    setError,
     formState: { errors },
   } = useForm();
   const navigate = useNavigate();
+  const [globalError, setGlobalError] = useState('');
 
   const onSubmit = (data) => {
+    setGlobalError('');
+
     fetch('/auth/login', {
       method: 'POST',
       headers: {
@@ -23,25 +26,20 @@ const Login = () => {
         if (res.success) {
           navigate('/');
         } else {
-          setError('login', {
-            type: 'custom',
-            message: "L'email ou le mot de passe est invalide",
-          });
+          setGlobalError("L'email ou le mot de passe est invalide");
         }
       })
       .catch((err) => {
         console.error(err);
-        setError('login', {
-          type: 'custom',
-          message:
-            'Une erreur est survenue lors du traîtement de votre requête',
-        });
+        setGlobalError(
+          'Une erreur est survenue lors du traîtement de votre requête',
+        );
       });
   };
 
   return (
     <>
-      {errors.login && <p>{errors.login.message}</p>}
+      {globalError && <p>{globalError}</p>}
 
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
@@ -49,8 +47,17 @@ const Login = () => {
           <input
             type="email"
             placeholder="example@mail.org"
-            {...register('email', { required: true })}
+            {...register('email', {
+              required: true,
+              pattern: /^[^\s@]+@([^\s@.,]+\.)+[^\s@.,]{2,}$/,
+            })}
           />
+          {errors.email?.type === 'required' && (
+            <p>L'adresse email est requise.</p>
+          )}
+          {errors.email?.type === 'pattern' && (
+            <p>L'adresse email doit être valide.</p>
+          )}
         </div>
 
         <div>
@@ -60,6 +67,9 @@ const Login = () => {
             placeholder="Votre mot de passe"
             {...register('password', { required: true })}
           />
+          {errors.password?.type === 'required' && (
+            <p>Le mot de passe est requis.</p>
+          )}
         </div>
 
         <input type="submit" value="Se connecter" />
