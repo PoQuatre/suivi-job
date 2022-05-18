@@ -1,18 +1,12 @@
 import { useEffect, useState } from 'react';
+import LandingPage from './pages/landingPage/LandingPage';
 
 export const App = () => {
-  const [response, setResponse] = useState('');
 
-  useEffect(() => {
-    fetch('/api/hello')
-      .then((res) => res.text())
-      .then((res) => setResponse(res));
-  }, []);
 
   return (
     <>
-      <p>Hello from the client!</p>
-      {response && <p>{response}</p>}
+     <LandingPage />
     </>
   );
 };
