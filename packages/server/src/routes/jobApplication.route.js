@@ -17,6 +17,16 @@ router.post('/', (req, res) => {
     });
 });
 
+router.get('/', (req, res) => {
+  JobApplicationModel.find()
+    .then((application) => {
+      res.json(application);
+    })
+    .catch((err) => {
+      res.status(500).send(err);
+    });
+});
+
 router.put('/:id', (req, res) => {
   const id = req.params.id;
   const body = req.body;

@@ -7,4 +7,4 @@ const User = new mongoose.Schema({
   jobApplications: [{ type: mongoose.Types.ObjectId, ref: 'JobApplication' }],
 });
 
-module.exports = mongoose.model('User', UserModel);
+module.exports = mongoose.model('User', User);
