@@ -15,7 +15,7 @@ const JobApplication = new mongoose.Schema({
   job: String,
   steps: [
     {
-      type: String,
+      stepType: String,
       startDate: Date,
       endDate: Date,
       location: {

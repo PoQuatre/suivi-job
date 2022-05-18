@@ -10,17 +10,32 @@ router.post('/', (req, res) => {
 
   const newJobApplication = new JobApplicationModel(body);
   // newJobApplication.ownerID = req.user._id
-  let dateStart = body.startDate;
-  let dateEnd = body.endDate;
+  // let dateStart = body.startDate;
+  // let dateEnd = body.endDate;
 
-  newJobApplication
-    .save()
-    .then((resultat) => {
-      res.json(resultat);
+  JobApplicationModel.create(body)
+    .then((application) => {
+      res.json(application);
     })
     .catch((err) => {
       res.status(500).send(err);
     });
+});
+
+router.put('/:id', (req, res) => {
+  const id = req.params.id;
+  const body = req.body;
+  JobApplicationModel.findByIdAndUpdate(id, { $set: body }).then;
+});
+
+router.delete('/:id', async function (req, res) {
+  const id = req.params.id;
+  try {
+    await JobApplicationModel.deleteOne({ _id: id });
+    res.json({ message: 'The application has been deleted' });
+  } catch (err) {
+    res.status(500).send(err);
+  }
 });
 
 module.exports = router;
