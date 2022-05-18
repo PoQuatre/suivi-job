@@ -24,17 +24,12 @@ passport.use(
 );
 
 passport.serializeUser((user, done) => {
-  console.log('serialize');
-
   done(null, user._id);
 });
 
 passport.deserializeUser(async (id, done) => {
-  console.log('deserialize');
-
   try {
     const user = await UserModel.findById(id);
-    console.log(user);
     done(null, user);
   } catch (err) {
     done(null, false);

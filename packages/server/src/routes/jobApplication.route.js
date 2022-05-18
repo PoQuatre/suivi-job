@@ -11,8 +11,6 @@ router.post('/', (req, res) => {
 
   const body = req.body;
   const info = req.user;
-  console.log('INFO USER', info);
-  console.log('INFO BODY', body);
 
   JobApplicationModel.create({
     ...body,
