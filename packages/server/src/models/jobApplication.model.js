@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const JobApplication = new mongoose.Schema({
+const JobApplicationSchema = new mongoose.Schema({
   ownerId: { type: mongoose.Types.ObjectId, ref: 'User' },
   state: {
     type: String,
@@ -26,4 +26,4 @@ const JobApplication = new mongoose.Schema({
   ],
 });
 
-module.exports = mongoose.model('JobApplication', JobApplication);
+module.exports = mongoose.model('JobApplication', JobApplicationSchema);
