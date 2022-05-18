@@ -12,6 +12,7 @@
     "compression": "^1.7.4",
     "cross-env": "^7.0.3",
     "express": "^4.18.1",
+    "mongoose": "^6.3.3",
     "morgan": "^1.10.0",
     "resolve-package-path": "^4.0.3",
     "vite": "^2.9.8"
