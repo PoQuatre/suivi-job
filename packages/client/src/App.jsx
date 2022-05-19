@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import Formulaire from './component/formulaire';
 
 export const App = () => {
   const [response, setResponse] = useState('');
@@ -11,6 +12,7 @@ export const App = () => {
 
   return (
     <>
+      <Formulaire />
       <p>Hello from the client!</p>
       {response && <p>{response}</p>}
     </>
