@@ -8,6 +8,7 @@ const JobApplicationSchema = new mongoose.Schema({
   },
   company: String,
   description: String,
+  titleJob: String,
   linkOffer: String,
   address: String,
   contact: String,
