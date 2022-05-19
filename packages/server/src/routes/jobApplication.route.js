@@ -86,7 +86,6 @@ router.post(
     const body = req.body;
     const info = req.user;
     const id = info._id;
-    const appl = '';
 
     JobApplicationModel.create({
       ...body,
