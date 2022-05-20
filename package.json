@@ -29,6 +29,7 @@
     }
   },
   "dependencies": {
+    "react-hook-form": "^7.31.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.2.4",

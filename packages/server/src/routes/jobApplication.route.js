@@ -6,11 +6,11 @@ const userModel = require('../models/user.model');
 router.post(
   '/',
   checkSchema({
-    ownerId: {
-      isMongoId: true,
-    },
     state: {
-      isString: true,
+      optional: true,
+      isIn: {
+        options: [['waiting', 'accepted', 'denied', 'no-response']],
+      },
     },
     company: {
       isString: true,
@@ -90,6 +90,7 @@ router.post(
     JobApplicationModel.create({
       ...body,
       ownerId: req.user._id,
+      state: body.state || 'waiting',
     })
       .then((application) => {
         userModel
