@@ -1,115 +1,113 @@
-import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './landingPage.module.css';
 import Carousel from 'react-elastic-carousel';
-import LandingPageCards from '../../components/landingPageCards/landingPageCards';
-import Alpicture from '../../assets/landingPagesimg/Al.png'
-import Ethanpicture from '../../assets/landingPagesimg/Ethan.png'
-import Joelpicture from '../../assets/landingPagesimg/Joel.png'
-import Mateopicture from '../../assets/landingPagesimg/Mateo.png'
-import LandingPageFeature from '../../components/landindPagefeature/LandingPageFeature';
-
-
+import LandingPageCard from '../../components/landingPageCard/LandingPageCard';
+import Alpicture from '../../assets/landingPage/Al.png';
+import Ethanpicture from '../../assets/landingPage/Ethan.png';
+import Joelpicture from '../../assets/landingPage/Joel.png';
+import Mateopicture from '../../assets/landingPage/Mateo.png';
+import LandingPageFeature from '../../components/landingPageFeature/LandingPageFeature';
+import pictureFake from '../../assets/landingPage/newFarm.jpg';
 
 const breakPoints = [
-  { width: 1, itemsToShow: 1},
+  { width: 1, itemsToShow: 1 },
   { width: 550, itemsToShow: 2 },
-  { width: 768, itemsToShow: 3},
-  { width: 1200, itemsToShow: 4 }
+  { width: 768, itemsToShow: 4 },
+  { width: 1200, itemsToShow: 4 },
 ];
 
 const LandingPage = () => {
-
-
   return (
-    <div className={styles.page}>
-      <div className="header">
-        <nav className={styles.Navbar}>
-          <ul className={styles.list}>
-            <li>
-              <img src="#"></img>
+    <>
+      <nav className={styles.navbar}>
+        <div className={styles.navbarContent}>
+          <div className={styles.navTitle}>
+            <h1>Suivi Job</h1>
+            <img src="" alt="Logo" />
+          </div>
+
+          <ul className={styles.nav}>
+            <li className={styles.navLink}>
+              {/* <Link to="/login">Se connecter</Link> */}
+              Se connecter
+            </li>
+
+            <li className={styles.navLink}>
+              {/* <Link to="/register">S'inscrire</Link> */}
+              S'inscrire
             </li>
           </ul>
-          <ul className={styles.listofConection}>
-            <li>
-              <a href="#">se connecter</a>
-            </li>
-            <li>
-              <a href="#">s'inscrire</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <div className={styles.body}>
-        <div className={styles.descriptionProject}>
-          <div className={styles.shadowDescription}>
-            <div className={styles.description}>
-              <div className={styles.paragraphofdescription}>
-              <p >
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Reiciendis autem deserunt quas perferendis delectus consequuntur
-                odio esse alias? Repellendus non pariatur deserunt. Molestiae
-                natus veniam consectetur explicabo dolores, eum odit?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque rem consectetur quam, quia maxime ducimus quos voluptatem ullam animi officiis, enim doloremque illo, quasi eos quis soluta culpa at? Repudiandae. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta numquam iusto laboriosam expedita dolores consequuntur quos corporis facere necessitatibus rerum nihil quo, aperiam quibusdam, at ipsam quisquam? Aspernatur, perspiciatis quas?
-              </p>
-            </div>
-            </div>
-          </div>
-          <div className={styles.shadowDescriptionImg}>
-            <div className={styles.imageProject}>
-              <p>
-              
-              </p>
-            </div>
-          </div>
         </div>
-      </div>
+      </nav>
+
+      <header className={styles.header} style={{backgroundImage: `url(${pictureFake})`}}>
+        <p className={styles.headerText}>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
+          veritatis temporibus quae excepturi reiciendis dolores corrupti
+          nostrum hic placeat expedita.
+        </p>
+      </header>
+
       <div className={styles.lineSkip}>
         <span></span>
         <span></span>
         <span></span>
       </div>
-      <div className={styles.features}>
-        <div className={styles.titleSection}>
-          <h1>FEATURES</h1>
-        </div>
-        <div className={styles.bodyFeatures}>
-          <LandingPageFeature
-          titleFeature="landing page"
-          descriptionFeature="loredfjBeuaFqdyefgYEBYQSY DXYUGBXRYG YFUYSTGCYAGYER SFG"
-          image={Alpicture}
-           />
-          <LandingPageFeature
-          titleFeature="landing page"
-          descriptionFeature="loredfjBeuaFqdyefgYEBYQSY DXYUGBXRYG YFUYSTGCYAGYER SFG"
-          image={Alpicture}
-        
-           />
 
-        </div>
-      </div>
-      <div className={styles.creator}></div>
+      <section>
+        <h2 className={styles.sectionTitle}>Fonctionnalités</h2>
+
+        <LandingPageFeature
+          title="Feature 1"
+          description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi mollitia perferendis autem impedit esse id odit ullam dolorem doloremque fuga!"
+          image={pictureFake}
+        />
+        <LandingPageFeature
+          title="Feature 2"
+          description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi mollitia perferendis autem impedit esse id odit ullam dolorem doloremque fuga!"
+          image={pictureFake}
+        />
+      </section>
+
+      {/* <div className={styles.creator}></div> */}
+
       <div className={styles.lineSkip}>
         <span></span>
         <span></span>
         <span></span>
       </div>
-      <div>
 
-     
-      <div className={styles.creators}>
-      <div className={styles.titleSection}>
-          <h1>EQUIPES</h1>
-        </div>
-         <div className={styles.creator}>
-         <Carousel breakPoints={breakPoints} utoPlaySpeed={2000}>
-          <LandingPageCards image={Alpicture} title="AL"  description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nihil veritatis possimus dignissimos temporibus reiciendis, praesentium, adipisci dolorem pariatur reprehenderit commodi similique recusandae iusto libero neque nam magni. Nulla, iure."/>
-          <LandingPageCards  image={Ethanpicture} title="Ethan"  description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nihil veritatis possimus dignissimos temporibus reiciendis, praesentium, adipisci dolorem pariatur reprehenderit commodi similique recusandae iusto libero neque nam magni. Nulla, iure."/>
-          <LandingPageCards  image={Joelpicture} title="Joel"  description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nihil veritatis possimus dignissimos temporibus reiciendis, praesentium, adipisci dolorem pariatur reprehenderit commodi similique recusandae iusto libero neque nam magni. Nulla, iure." />
-          <LandingPageCards  image={Mateopicture} title="Mateo"  description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nihil veritatis possimus dignissimos temporibus reiciendis, praesentium, adipisci dolorem pariatur reprehenderit commodi similique recusandae iusto libero neque nam magni. Nulla, iure." />
-      </Carousel>
-           </div>
-        </div>
-      </div>
-    </div>
+      <section className={styles.teamSection}>
+        <h2 className={styles.sectionTitle}>Équipe</h2>
+
+        <Carousel breakPoints={breakPoints} disableArrowsOnEnd={false}>
+          <LandingPageCard
+            image={Alpicture}
+            title="AL"
+            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nihil veritatis possimus dignissimos temporibus reiciendis, praesentium, adipisci dolorem pariatur reprehenderit commodi similique recusandae iusto libero neque nam magni. Nulla, iure."
+          />
+          <LandingPageCard
+            image={Ethanpicture}
+            title="Ethan SLIMANI"
+            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nihil veritatis possimus dignissimos temporibus reiciendis, praesentium, adipisci dolorem pariatur reprehenderit commodi similique recusandae iusto libero neque nam magni. Nulla, iure."
+          />
+          <LandingPageCard
+            image={Joelpicture}
+            title="Joël MAMPOUYA"
+            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nihil veritatis possimus dignissimos temporibus reiciendis, praesentium, adipisci dolorem pariatur reprehenderit commodi similique recusandae iusto libero neque nam magni. Nulla, iure."
+          />
+          <LandingPageCard
+            image={Mateopicture}
+            title="Matéo LE FLEM"
+            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nihil veritatis possimus dignissimos temporibus reiciendis, praesentium, adipisci dolorem pariatur reprehenderit commodi similique recusandae iusto libero neque nam magni. Nulla, iure."
+          />
+        </Carousel>
+      </section>
+
+      <footer className={styles.footer}>
+        © Copyright - Suivi Job - 2022
+      </footer>
+    </>
   );
 };
 

@@ -1,0 +1,29 @@
+.container {
+  max-width: 1000px;
+  padding-inline: 1rem;
+  margin-inline: auto;
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.container img {
+  width: 100%;
+}
+
+@media screen and (min-width: 900px) {
+  .container {
+    gap: 1rem;
+    flex-direction: row;
+  }
+
+  .container:nth-child(odd) {
+    flex-direction: row-reverse;
+  }
+
+  .description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}

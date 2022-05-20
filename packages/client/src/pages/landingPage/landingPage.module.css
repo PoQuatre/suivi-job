@@ -1,147 +1,70 @@
-/* navbar */
-
-.Navbar{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    list-style-type: none;
+.navbar {
+  padding-block: 1rem;
 }
 
-.list{
-    list-style-type: none;
-}
-.listofConection{
-    display: flex;
-    list-style-type: none;
-}
-.listofConection li{
-    margin-right: 20px;
-    text-transform: uppercase;
-    
+.navbarContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1000px;
+  margin-inline: auto;
+  padding-inline: 1rem;
 }
 
-.listofConection a{
-    text-decoration: none;
+.navTitle {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }
 
-
-/* navbar */
-
-/* body  SECTION 1*/
-
-
-.descriptionProject{
-    height: auto;
-    background-color: antiquewhite;
-    padding: 50px;
-    display: flex;
- 
-
-}
-.shadowDescription{
-    filter: drop-shadow(15px 5px 8px rgba(50, 50, 0, 0.5));
+.navTitle h1 {
+  margin-block: 0;
 }
 
-.description{
-    width: 26rem;
-    height: 12rem;
-    background-color: white;
-    clip-path: polygon(0 0, 100% 0, 64% 100%, 0% 100%);
-  padding: 50px;
-    text-align: justify;
-    transition: 1s;
-   
-
-
-}
-.paragraphofdescription p{
-    clip-path: polygon(0 0, 100% 0, 64% 100%, 0% 100%);
-    shape-outside: polygon(0 0, 100% 0, 64% 100%, 0% 100%);
-    width: 300px;
-    height: 500px;
-    float: left;
-    word-wrap: break-word;
-    
-}
-.description:hover .shadowDescription{
-    filter: drop-shadow(inset 15px 5px 8px rgba(50, 50, 0, 0.5));
-}
-.description:hover {
-    transform: scale(1.1);
+.nav {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  gap: 1rem;
 }
 
-.shadowDescriptionImg{
-    filter: drop-shadow(-19px 0px 8px rgba(50, 50, 0, 0.5));
-}
-.imageProject{
-    width: 426px;
-    height: 200px;
-    background-color: rgba(255, 40, 40, 0.484);
-    clip-path: polygon(41% 0, 100% 0, 100% 100%, 0% 100%);
-    padding: 56px;
-    text-align: justify;
-    transition: 1s;
+.navLink {
+  list-style: none;
 }
 
-.imageProject:hover {
-    transform: scale(1.1);
-}
-
-/* body section2 */
-.lineSkip{
-    margin-top: 50px;
-    display: flex;
-justify-content: space-evenly
-    
-
-}
-
-span{
-    border-radius: 10px;
-}
-
-span:nth-child(1){
-    background-color: beige;
-    width: 50px;
-    height: 10px;
-    
-}
-span:nth-child(2){
-    background-color: beige;
-    width: 400px;
-    height: 10px;
-
-}
-span:nth-child(3){
-    background-color: beige;
-    width: 50px;
-    height: 10px;
-
-}
-
-/* titleSection */
-
-.titleSection{
-    text-align: center;
-
-}
-/* feature */
-
-.bodyFeatures{
-             display: flex;
-             flex-direction: column;
-             align-items: center;
-             margin: 50px;
-}
-
-
-/* SECTION3 */
-
-.creator{
-    font-family: sans-serif;
+.header {
+  min-height: 50vh;
+  box-shadow: inset 0 2px 2px 0 #00000096;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: black;
 }
-/* body */
+
+.headerText {
+  background-color: #ffffff96;
+  padding-left: 1rem;
+  padding-block: 1rem;
+  max-width: 300px;
+}
+
+.sectionTitle {
+  text-align: center;
+}
+
+.teamSection {
+  margin-inline: auto;
+  max-width: 1000px;
+  padding-inline: 1rem;
+}
+
+.footer {
+  text-align: center;
+}
+
+@media screen and (min-width: 600px) {
+  .navbarContent {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
