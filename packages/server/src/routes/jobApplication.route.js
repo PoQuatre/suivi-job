@@ -6,9 +6,6 @@ const userModel = require('../models/user.model');
 router.post(
   '/',
   checkSchema({
-    ownerId: {
-      isMongoId: true,
-    },
     state: {
       isString: true,
     },
