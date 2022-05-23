@@ -4,7 +4,7 @@ const JobApplicationSchema = new mongoose.Schema({
   ownerId: { type: mongoose.Types.ObjectId, ref: 'User' },
   state: {
     type: String,
-    enum: ['waiting', 'denied', 'accepted', 'no-respond'],
+    enum: ['waiting', 'denied', 'accepted', 'noResponse'],
   },
   company: String,
   description: String,

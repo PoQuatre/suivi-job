@@ -1,6 +1,6 @@
 .jobList {
   width: 100%;
-  background-color: bisque;
+  background-color: #bcbfbe;
 }
 
 .entreprise {
@@ -20,7 +20,7 @@
 }
 
 .waiting {
-  background-color: #ffffff;
+  background-color: bisque;
 }
 
 .accepted {
@@ -31,6 +31,6 @@
   background-color: #c63131;
 }
 
-.no-response {
-  background-color: #a68e8e;
+.noResponse {
+  background-color: #00d28c;
 }

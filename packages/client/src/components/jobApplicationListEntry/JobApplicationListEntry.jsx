@@ -25,8 +25,8 @@ function jobApplicationListEntry(props) {
       return styles.waiting;
     } else if (props.state === 'denied') {
       return styles.denied;
-    } else if (props.state === 'no-accepted') {
-      return styles.no - accepted;
+    } else if (props.state === 'noResponse') {
+      return styles.noResponse;
     } else if (props.state === 'accepted') {
       return styles.accepted;
     } else {
