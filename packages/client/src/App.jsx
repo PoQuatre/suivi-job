@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import Login from './pages/login/Login';
 import Register from './pages/register/Register';
+import { Navbar } from './components/navbar/Navbar';
 
 import JobApplication from './pages/jobApplication/JobApplication';
 export const App = () => {

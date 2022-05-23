@@ -8,6 +8,7 @@ const passport = require('./config/passport');
 
 const AuthRouter = require('./routes/auth.route');
 const JobApplicationRouter = require('./routes/jobApplication.route');
+const SettingsRouter = require('./routes/settings.route');
 
 mongoose.connect('mongodb://localhost:27017/suivi-job');
 
@@ -33,6 +34,7 @@ app.use(passport.session());
 
 app.use('/auth', AuthRouter);
 app.use('/api/job-application', JobApplicationRouter);
+app.use('/api/settings', SettingsRouter);
 
 registerClient(app); // Keep this line after all your routes
 

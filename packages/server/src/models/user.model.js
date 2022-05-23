@@ -5,6 +5,7 @@ const UserSchema = new mongoose.Schema({
   email: String,
   password: String,
   jobApplications: [{ type: mongoose.Types.ObjectId, ref: 'JobApplication' }],
+  advanced: Boolean,
 });
 
 module.exports = mongoose.model('User', UserSchema);
