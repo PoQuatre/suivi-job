@@ -1,0 +1,36 @@
+.jobList {
+  width: 100%;
+  background-color: bisque;
+}
+
+.entreprise {
+  width: 20%;
+  text-overflow: ellipsis;
+}
+
+.titleJob {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.date {
+  margin-left: auto;
+  justify-self: flex-end;
+}
+
+.waiting {
+  background-color: #ffffff;
+}
+
+.accepted {
+  background-color: #70c24a;
+}
+
+.denied {
+  background-color: #c63131;
+}
+
+.no-response {
+  background-color: #a68e8e;
+}
