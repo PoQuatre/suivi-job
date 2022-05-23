@@ -4,28 +4,11 @@ import moment from 'moment';
 
 function jobApplicationListEntry(props) {
   const getColorClass = () => {
-    // switch (props.state) {
-    //   case 'waiting':
-    //      styles.waiting;
-    //      break;
-    //   case 'accepted':
-    //      styles.accepted;
-    //      break;
-    //   case 'no-response':
-    //      styles.no-response;
-    //     break;
-    //   case 'denied':
-    //      styles.denied;
-    //      break;
-    //   default :
-    //      styles.jobList;
-    //      break;
-    //     }
     if (props.state === 'waiting') {
       return styles.waiting;
     } else if (props.state === 'denied') {
       return styles.denied;
-    } else if (props.state === 'noResponse') {
+    } else if (props.state === 'no-response') {
       return styles.noResponse;
     } else if (props.state === 'accepted') {
       return styles.accepted;
