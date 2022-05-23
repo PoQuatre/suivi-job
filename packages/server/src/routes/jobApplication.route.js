@@ -6,11 +6,11 @@ const userModel = require('../models/user.model');
 router.post(
   '/',
   checkSchema({
-    ownerId: {
-      isMongoId: true,
-    },
     state: {
-      isString: true,
+      optional: true,
+      isIn: {
+        options: [['waiting', 'accepted', 'denied', 'no-response']],
+      },
     },
     company: {
       isString: true,
@@ -20,15 +20,21 @@ router.post(
     },
     linkOffer: {
       isURL: true,
-      optional: true,
+      optional: {
+        options: { checkFalsy: true },
+      },
     },
     address: {
       isString: true,
-      optional: true,
+      optional: {
+        options: { checkFalsy: true },
+      },
     },
     contact: {
       isString: true,
-      optional: true,
+      optional: {
+        options: { checkFalsy: true },
+      },
     },
     date: {
       isDate: true,
@@ -36,11 +42,15 @@ router.post(
     },
     job: {
       isString: true,
-      optional: true,
+      optional: {
+        options: { checkFalsy: true },
+      },
     },
     steps: {
       isArray: true,
-      optional: true,
+      optional: {
+        options: { checkFalsy: true },
+      },
     },
     'steps.*': {
       isObject: true,
@@ -55,19 +65,25 @@ router.post(
     'steps.*.endDate': {
       isDate: true,
       toDate: true,
-      optional: true,
+      optional: {
+        options: { checkFalsy: true },
+      },
     },
     'steps.*.location': {
       isObject: true,
-      optional: true,
+      optional: {
+        options: { checkFalsy: true },
+      },
     },
     'steps.*.location.locationType': {
       isString: true,
-      optional: true,
+      notEmpty: true,
     },
     'steps.*.location.details': {
       isString: true,
-      optional: true,
+      optional: {
+        options: { checkFalsy: true },
+      },
     },
   }),
   (req, res) => {
@@ -90,6 +106,7 @@ router.post(
     JobApplicationModel.create({
       ...body,
       ownerId: req.user._id,
+      state: body.state || 'waiting',
     })
       .then((application) => {
         userModel
