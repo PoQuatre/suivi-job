@@ -20,15 +20,21 @@ router.post(
     },
     linkOffer: {
       isURL: true,
-      optional: true,
+      optional: {
+        options: { checkFalsy: true },
+      },
     },
     address: {
       isString: true,
-      optional: true,
+      optional: {
+        options: { checkFalsy: true },
+      },
     },
     contact: {
       isString: true,
-      optional: true,
+      optional: {
+        options: { checkFalsy: true },
+      },
     },
     date: {
       isDate: true,
@@ -36,11 +42,15 @@ router.post(
     },
     job: {
       isString: true,
-      optional: true,
+      optional: {
+        options: { checkFalsy: true },
+      },
     },
     steps: {
       isArray: true,
-      optional: true,
+      optional: {
+        options: { checkFalsy: true },
+      },
     },
     'steps.*': {
       isObject: true,
@@ -55,19 +65,25 @@ router.post(
     'steps.*.endDate': {
       isDate: true,
       toDate: true,
-      optional: true,
+      optional: {
+        options: { checkFalsy: true },
+      },
     },
     'steps.*.location': {
       isObject: true,
-      optional: true,
+      optional: {
+        options: { checkFalsy: true },
+      },
     },
     'steps.*.location.locationType': {
       isString: true,
-      optional: true,
+      notEmpty: true,
     },
     'steps.*.location.details': {
       isString: true,
-      optional: true,
+      optional: {
+        options: { checkFalsy: true },
+      },
     },
   }),
   (req, res) => {
