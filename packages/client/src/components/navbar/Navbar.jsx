@@ -34,19 +34,19 @@ export const Navbar = () => {
         </button>
       </div>
       <div className={styles.section}>
-        <a>
+        <a href="/homepage">
           <HomeIcon className={styles.icon} />
           <p>Page d'acceuil</p>
         </a>
       </div>
       <div className={styles.section}>
-        <a>
+        <a href="/dashboard">
           <DashboardIcon className={styles.icon} />
           <p>Tableau de bort</p>
         </a>
       </div>
       <div className={`${styles.section} ${styles.params}`}>
-        <a>
+        <a href="/params">
           <ParamsIcon className={styles.icon} />
           <p>Paramètre</p>
         </a>
