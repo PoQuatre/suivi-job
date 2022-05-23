@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './jobApplicationListEntry.module.css';
+import moment from 'moment';
 
 function jobApplicationListEntry(props) {
   const getColorClass = () => {
@@ -33,12 +34,16 @@ function jobApplicationListEntry(props) {
     }
   };
 
+  const getDate = (date) => {
+    return moment(date).format('DD/MM/YYYY');
+  };
+
   return (
     <>
       <tr key={props.id} className={getColorClass()}>
         <td className={styles.enterprise}>{props.enterprise}</td>
         <td className={styles.titleJob}>{props.titleJob}</td>
-        <td className={styles.date}>{props.date}</td>
+        <td className={styles.date}>{getDate(props.date)}</td>
         <td>
           <button onClick={props.onDelete}>delete</button>
         </td>
