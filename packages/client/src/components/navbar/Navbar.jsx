@@ -6,29 +6,21 @@ import { NavButtonIcon } from '../icons/NavButtonIcon';
 import styles from './Navbar.module.css';
 
 export const Navbar = () => {
-  const [navBolean, setNavBolean] = useState(false);
-  //     let location = useLocation();
-  //   React.useEffect(() => {
-  //     ga.send(["pageview", location.pathname]);
-  //   }, [location]);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div
-      className={`${styles.navbar} ${navBolean === true ? styles.open : ''}`}
-    >
+    <div className={`${styles.navbar} ${isOpen ? styles.open : ''}`}>
       <div className={styles.navButton}>
-        <h2 className={`${navBolean === false ? styles.none : ''}`}>
-          SUIVI JOB
-        </h2>
+        <h2 className={`${!isOpen ? styles.none : ''}`}>SUIVI JOB</h2>
         <button
           className={styles.button}
           onClick={() => {
-            setNavBolean(!navBolean);
+            setIsOpen(!isOpen);
           }}
         >
           <NavButtonIcon
             className={`${styles.navButtonIcon} ${
-              navBolean === true ? styles.inversed : ''
+              isOpen ? styles.inversed : ''
             }`}
           />
         </button>
