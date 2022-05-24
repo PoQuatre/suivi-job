@@ -1,0 +1,72 @@
+.navbar {
+  padding-block: 1rem;
+}
+
+.navbarContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1000px;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+.navTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navTitle h1 {
+  margin-block: 0;
+}
+
+.nav {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.navLink {
+  list-style: none;
+}
+
+.header {
+  min-height: 50vh;
+  box-shadow: inset 0 2px 2px 0 #00000096;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.headerText {
+  background-color: #ffffff96;
+  padding-left: 1rem;
+  padding-block: 1rem;
+  max-width: 300px;
+}
+
+.sectionTitle {
+  text-align: center;
+}
+
+.teamSection {
+  margin-inline: auto;
+  max-width: 1000px;
+  padding-inline: 1rem;
+}
+
+.footer {
+  margin-block: 1rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 600px) {
+  .navbarContent {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

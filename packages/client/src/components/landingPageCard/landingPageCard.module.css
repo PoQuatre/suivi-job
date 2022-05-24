@@ -1,0 +1,25 @@
+.card {
+  margin-top: 50px;
+  position: relative;
+  background-color: bisque;
+  border-radius: 10px;
+  width: 100%;
+  margin-inline: 0.5rem;
+  padding-top: 50px;
+  padding-inline: 1rem;
+}
+
+.img {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  border: #fff solid 8px;
+}
+
+.title {
+  text-align: center;
+}
