@@ -12,9 +12,11 @@
   },
   "dependencies": {
     "modern-normalize": "^1.1.0",
+    "moment": "^2.29.3",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-elastic-carousel": "^0.11.5",
+    "react-hook-form": "^7.31.1",
     "react-router-dom": "^6.3.0",
     "styled-components": "^5.3.5"
   },

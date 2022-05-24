@@ -1,0 +1,97 @@
+.navbar {
+  background-color: #773413;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1vh;
+}
+
+.section {
+  display: flex;
+  flex-direction: row;
+}
+
+.section p {
+  display: none;
+}
+
+.button {
+  background-color: #a26b42;
+  border: 0;
+  cursor: pointer;
+}
+
+.section a {
+  cursor: pointer;
+}
+
+.navButton {
+  background-color: #a26b42;
+  display: none;
+}
+
+.icon {
+  fill: white;
+}
+.navButtonIcon {
+  stroke: white;
+  fill: none;
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    overflow: hidden;
+    padding: 0;
+    width: 9vh;
+  }
+  .navbar.open {
+    width: 35vh;
+  }
+  .navButton {
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    border: 0;
+    padding-block: 0.75rem;
+    align-items: center;
+  }
+  .navButton h2 {
+    color: white;
+    margin: 0;
+    margin-right: 2vh;
+  }
+  .section {
+    margin-top: 2vh;
+    text-align: center;
+  }
+  .section a {
+    justify-content: center;
+    display: flex;
+  }
+  .inversed {
+    transform: rotate(180deg);
+  }
+  .section p {
+    display: block;
+    white-space: nowrap;
+    padding-left: 3vh;
+    align-items: center;
+    color: white;
+  }
+  svg {
+    width: 8.5vh;
+    text-align: center;
+  }
+  a svg {
+    justify-content: center;
+    display: flex;
+  }
+  .params {
+    padding-top: 57.5vh;
+  }
+  .none {
+    display: none;
+  }
+}
