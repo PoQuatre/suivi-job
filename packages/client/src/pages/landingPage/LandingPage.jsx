@@ -40,11 +40,14 @@ const LandingPage = () => {
         </div>
       </nav>
 
-      <header className={styles.header} style={{backgroundImage: `url(${pictureFake})`}}>
+      <header
+        className={styles.header}
+        style={{ backgroundImage: `url(${pictureFake})` }}
+      >
         <p className={styles.headerText}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
-          veritatis temporibus quae excepturi reiciendis dolores corrupti
-          nostrum hic placeat expedita.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum veritatis
+          temporibus quae excepturi reiciendis dolores corrupti nostrum hic
+          placeat expedita.
         </p>
       </header>
 
@@ -68,8 +71,6 @@ const LandingPage = () => {
           image={pictureFake}
         />
       </section>
-
-      {/* <div className={styles.creator}></div> */}
 
       <div className={styles.lineSkip}>
         <span></span>
@@ -104,9 +105,7 @@ const LandingPage = () => {
         </Carousel>
       </section>
 
-      <footer className={styles.footer}>
-        © Copyright - Suivi Job - 2022
-      </footer>
+      <footer className={styles.footer}>© Copyright - Suivi Job - 2022</footer>
     </>
   );
 };
