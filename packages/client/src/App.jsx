@@ -4,7 +4,7 @@ import Login from './pages/login/Login';
 import Register from './pages/register/Register';
 import JobApplication from './pages/jobApplication/JobApplication';
 
-import 'modern-normalize/modern-normalize.css'
+import 'modern-normalize/modern-normalize.css';
 
 export const App = () => {
   return (
