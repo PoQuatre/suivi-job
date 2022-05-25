@@ -127,17 +127,14 @@ router.post(
 );
 
 router.get('/', (req, res) => {
-  JobApplicationModel.find()
-    .then((application) => {
-      res.json(application);
-    })
-    .catch((err) => {
-      res.status(500).send(err);
+  if (!req.user) {
+    return res.status(401).json({
+      success: false,
+      message: 'Unauthorized',
     });
-});
-
-router.get('/', (req, res) => {
-  JobApplicationModel.find()
+  }
+  const id = req.user;
+  JobApplicationModel.find({ ownerId: id })
     .then((application) => {
       res.json(application);
     })
