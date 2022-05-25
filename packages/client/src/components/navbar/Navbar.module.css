@@ -45,6 +45,7 @@
     overflow: hidden;
     padding: 0;
     width: 9vh;
+    height: 100vh;
   }
   .navbar.open {
     width: 35vh;
@@ -89,7 +90,7 @@
     display: flex;
   }
   .params {
-    padding-top: 57.5vh;
+    margin-top: auto;
   }
   .none {
     display: none;

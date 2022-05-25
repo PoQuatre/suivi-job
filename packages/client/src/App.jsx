@@ -12,7 +12,7 @@ export const App = () => {
       <Route path="/" element={<LandingPage />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/job-application" element={<JobApplication />} />
+      <Route path="/job-application/*" element={<JobApplication />} />
     </Routes>
   );
 };
