@@ -22,17 +22,25 @@ function jobApplicationListEntry(props) {
   };
 
   return (
-    <>
-      <tr key={props.id} className={getColorClass()}>
-        <td className={styles.enterprise}>{props.enterprise}</td>
-        <td className={styles.titleJob}>{props.titleJob}</td>
-        <td className={styles.date}>{getDate(props.date)}</td>
-        <td>
+    <div key={props.id} className={getColorClass()}>
+      <div className={styles.ItemList}>
+        <div>
+          {' '}
+          <p className={styles.enterprise}>{props.enterprise}</p>
+        </div>
+        <div>
+          {' '}
+          <p className={styles.titleJob}>{props.titleJob}</p>
+        </div>
+        <div>
+          {' '}
+          <p className={styles.date}>{getDate(props.date)}</p>
+        </div>
+        {/* <d>
           <button onClick={props.onDelete}>delete</button>
-        </td>
-      </tr>
-      <di></di>
-    </>
+        </td> */}
+      </div>
+    </div>
   );
 }
 

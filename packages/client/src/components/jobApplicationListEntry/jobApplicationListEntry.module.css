@@ -2,6 +2,12 @@
   width: 100%;
   background-color: #bcbfbe;
 }
+.ItemList {
+  display: grid;
+  grid-template-columns: 1fr 2fr 12ch;
+  grid-template-rows: 1fr;
+  justify-items: center;
+}
 
 .entreprise {
   width: 20%;
