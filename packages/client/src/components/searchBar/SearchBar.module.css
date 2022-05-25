@@ -1,0 +1,26 @@
+.bar {
+  display: flex;
+  align-items: center;
+  background-color: #eed8b8;
+  border-radius: 30px;
+}
+
+input {
+  border: 0;
+  background-color: white;
+}
+
+input {
+  outline: none;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  border: solid 1px;
+}
+
+button {
+  display: flex;
+  align-items: center;
+}
