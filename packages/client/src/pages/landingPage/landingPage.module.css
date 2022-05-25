@@ -8,13 +8,13 @@
   justify-content: center;
   max-width: 1000px;
   margin-inline: auto;
+  align-items: center;
   padding-inline: 1rem;
 }
 
 .navTitle {
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 1rem;
 }
 

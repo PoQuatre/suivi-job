@@ -1,4 +1,5 @@
 import React from 'react';
+import LandingPageIcons from '../landingPageIcons/LandingPageIcons';
 import styles from './landingPageCard.module.css';
 
 function LandingPageCard(props) {
@@ -9,6 +10,13 @@ function LandingPageCard(props) {
       <div>
         <h3 className={styles.title}>{props.title}</h3>
         <p>{props.description}</p>
+      </div>
+      <div>
+        <LandingPageIcons
+          linkedin={props.linkedin}
+          git={props.git}
+          website={props.website}
+        />
       </div>
     </div>
   );
