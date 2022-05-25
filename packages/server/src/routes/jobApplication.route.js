@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { validationResult, checkSchema } = require('express-validator');
+const { validationResult, checkSchema, param } = require('express-validator');
 const JobApplicationModel = require('../models/jobApplication.model');
 const userModel = require('../models/user.model');
 
@@ -136,6 +136,29 @@ router.get('/', (req, res) => {
 
   const id = req.user._id;
   JobApplicationModel.find({ ownerId: id })
+    .then((application) => {
+      res.json(application);
+    })
+    .catch((err) => {
+      res.status(500).send(err);
+    });
+});
+
+router.get('/:id', param('id').isMongoId(), (req, res) => {
+  if (!req.user) {
+    return res.status(401).json({
+      success: false,
+      message: 'Unauthorized',
+    });
+  }
+
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
+
+  const id = req.params.id;
+  JobApplicationModel.finOne({ _id: id, ownerId: req.user._id })
     .then((application) => {
       res.json(application);
     })
