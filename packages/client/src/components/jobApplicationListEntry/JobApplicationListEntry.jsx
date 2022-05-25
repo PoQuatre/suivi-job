@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './jobApplicationListEntry.module.css';
 import moment from 'moment';
+import { Route, Link, Router } from 'react-router-dom';
 
 function jobApplicationListEntry(props) {
   const getColorClass = () => {
@@ -22,25 +23,24 @@ function jobApplicationListEntry(props) {
   };
 
   return (
-    <div key={props.id} className={getColorClass()}>
-      <div className={styles.ItemList}>
-        <div>
-          {' '}
-          <p className={styles.enterprise}>{props.enterprise}</p>
-        </div>
-        <div>
-          {' '}
-          <p className={styles.titleJob}>{props.titleJob}</p>
-        </div>
-        <div>
-          {' '}
-          <p className={styles.date}>{getDate(props.date)}</p>
-        </div>
-        {/* <d>
+    <Link to={`/job-application/${props.id}`} key={props.id}>
+      <div className={getColorClass()}>
+        <div className={styles.ItemList}>
+          <div>
+            <p className={styles.enterprise}>{props.enterprise}</p>
+          </div>
+          <div>
+            <p className={styles.titleJob}>{props.titleJob}</p>
+          </div>
+          <div>
+            <p className={styles.date}>{getDate(props.date)}</p>
+          </div>
+          {/* <d>
           <button onClick={props.onDelete}>delete</button>
         </td> */}
+        </div>
       </div>
-    </div>
+    </Link>
   );
 }
 
