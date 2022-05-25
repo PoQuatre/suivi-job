@@ -8,6 +8,7 @@ import Joelpicture from '../../assets/landingPage/Joel.png';
 import Mateopicture from '../../assets/landingPage/Mateo.png';
 import LandingPageFeature from '../../components/landingPageFeature/LandingPageFeature';
 import pictureFake from '../../assets/landingPage/newFarm.jpg';
+import LandingPageIcons from '../../components/landingPageIcons/LandingPageIcons';
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
@@ -28,13 +29,11 @@ const LandingPage = () => {
 
           <ul className={styles.nav}>
             <li className={styles.navLink}>
-              {/* <Link to="/login">Se connecter</Link> */}
-              Se connecter
+              <Link to="/login">Se connecter</Link>
             </li>
 
             <li className={styles.navLink}>
-              {/* <Link to="/register">S'inscrire</Link> */}
-              S'inscrire
+              <Link to="/register">S'inscrire</Link>
             </li>
           </ul>
         </div>
@@ -86,21 +85,33 @@ const LandingPage = () => {
             image={Alpicture}
             title="AL"
             description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nihil veritatis possimus dignissimos temporibus reiciendis, praesentium, adipisci dolorem pariatur reprehenderit commodi similique recusandae iusto libero neque nam magni. Nulla, iure."
+            git="https://github.com/Kar1004"
+            linkedin="https://www.linkedin.com/in/abder-karamoko/"
+            website="https://kar1004.github.io/portefolio-AL/"
           />
           <LandingPageCard
             image={Ethanpicture}
             title="Ethan SLIMANI"
             description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nihil veritatis possimus dignissimos temporibus reiciendis, praesentium, adipisci dolorem pariatur reprehenderit commodi similique recusandae iusto libero neque nam magni. Nulla, iure."
+            git="https://github.com/SoraNoTami"
+            linkedin="https://www.linkedin.com/in/ethan-slimani/"
+            website="https://soranotami.github.io/Portfolio/"
           />
           <LandingPageCard
             image={Joelpicture}
             title="Joël MAMPOUYA"
             description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nihil veritatis possimus dignissimos temporibus reiciendis, praesentium, adipisci dolorem pariatur reprehenderit commodi similique recusandae iusto libero neque nam magni. Nulla, iure."
+            git="https://github.com/Joelmpy"
+            linkedin="https://www.linkedin.com/in/mampouya-joel/"
+            website="https://joelmpy.github.io/"
           />
           <LandingPageCard
             image={Mateopicture}
             title="Matéo LE FLEM"
             description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nihil veritatis possimus dignissimos temporibus reiciendis, praesentium, adipisci dolorem pariatur reprehenderit commodi similique recusandae iusto libero neque nam magni. Nulla, iure."
+            git="https://github.com/PoQuatre"
+            linkedin="https://www.linkedin.com/in/mateo-le-flem/"
+            website="https://mateo-leflem.fr/"
           />
         </Carousel>
       </section>
