@@ -44,9 +44,9 @@ const LandingPage = () => {
         style={{ backgroundImage: `url(${pictureFake})` }}
       >
         <p className={styles.headerText}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum veritatis
-          temporibus quae excepturi reiciendis dolores corrupti nostrum hic
-          placeat expedita.
+          Nous avons créé ce site pour aider toutes les personnes en recherche
+          de travail à trier leurs centaines de candidature simplement et
+          efficacement.
         </p>
       </header>
 
@@ -60,13 +60,13 @@ const LandingPage = () => {
         <h2 className={styles.sectionTitle}>Fonctionnalités</h2>
 
         <LandingPageFeature
-          title="Feature 1"
-          description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi mollitia perferendis autem impedit esse id odit ullam dolorem doloremque fuga!"
+          title="Page d'Acceuil"
+          description="Connectez-vous pour avoir acces à votre page perso et voir vos candidatures. Le code couleur (voir l'image à gauche) des candidature est le suivant:  Beige: la candidature est en cours,  Gris: la candidature est sans reponse,  Vert: la candidature est accepté, Rouge: la candidature est refusé"
           image={pictureFake}
         />
         <LandingPageFeature
-          title="Feature 2"
-          description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi mollitia perferendis autem impedit esse id odit ullam dolorem doloremque fuga!"
+          title="Candidature"
+          description="Ajouter, modifier et supprimer des candidature grace à un formulaire. Vous pouvez ajouter des étapes(entretiens, stages) à vos candidatures."
           image={pictureFake}
         />
       </section>
@@ -92,7 +92,7 @@ const LandingPage = () => {
           <LandingPageCard
             image={Ethanpicture}
             title="Ethan SLIMANI"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nihil veritatis possimus dignissimos temporibus reiciendis, praesentium, adipisci dolorem pariatur reprehenderit commodi similique recusandae iusto libero neque nam magni. Nulla, iure."
+            description="Développeur full stack Back: Je me suis occupé de toutes les routes sauf celles du login et du register. Front:  J'ai chosis le thème (les couleurs) du site et j'ai crée la Navbar. J'ai aimé participé à ce projet avec cette équipe tout le monde a énormément participé et je suis heureux du resultat de notre travail."
             git="https://github.com/SoraNoTami"
             linkedin="https://www.linkedin.com/in/ethan-slimani/"
             website="https://soranotami.github.io/Portfolio/"
