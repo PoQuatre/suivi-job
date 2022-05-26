@@ -136,6 +136,7 @@ router.get('/', (req, res) => {
 
   const id = req.user._id;
   JobApplicationModel.find({ ownerId: id })
+    .sort({ date: 'descending' })
     .then((application) => {
       res.json(application);
     })
