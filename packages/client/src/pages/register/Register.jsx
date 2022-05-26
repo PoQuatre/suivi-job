@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import { useUserContext } from '../../hooks/useUserContext';
+import { useAuth } from '../../hooks/useAuth';
 
 const Register = () => {
   const {
@@ -13,7 +13,7 @@ const Register = () => {
   } = useForm();
   const navigate = useNavigate();
   const [globalError, setGlobalError] = useState('');
-  const { connect } = useUserContext();
+  const { connect } = useAuth();
 
   const onSubmit = (data) => {
     setGlobalError('');
