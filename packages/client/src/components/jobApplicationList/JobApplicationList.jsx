@@ -8,11 +8,11 @@ function JobApplicationList(props) {
   };
 
   return (
-    <div>
+    <div className={styles.list}>
       {props.list.map((item) => {
         return (
           <JobApplicationListEntry
-            id={item.id}
+            id={item._id}
             state={item.state}
             enterprise={item.company}
             titleJob={item.titleJob}

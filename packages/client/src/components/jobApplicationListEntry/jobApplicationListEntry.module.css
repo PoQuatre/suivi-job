@@ -6,12 +6,16 @@
   display: grid;
   grid-template-columns: 1fr 2fr 12ch;
   grid-template-rows: 1fr;
-  justify-items: center;
 }
 
 .entreprise {
   width: 20%;
   text-overflow: ellipsis;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 .titleJob {
@@ -27,16 +31,20 @@
 
 .waiting {
   background-color: bisque;
+  border-radius: 10px;
 }
 
 .accepted {
   background-color: #70c24a;
+  border-radius: 10px;
 }
 
 .denied {
   background-color: #c63131;
+  border-radius: 10px;
 }
 
 .noResponse {
   background-color: #00d28c;
+  border-radius: 10px;
 }
