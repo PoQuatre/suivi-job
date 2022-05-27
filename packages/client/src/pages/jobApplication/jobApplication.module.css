@@ -5,8 +5,13 @@
   position: relative;
 }
 
-.splitContainer {
+.leftContainer,
+.rightContainer {
   overflow-y: auto;
+}
+
+.leftContainer {
+  position: relative;
 }
 
 .desktopOnly {
@@ -23,12 +28,19 @@
   }
 }
 
+.addButton {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+}
+
 @media screen and (min-width: 768px) {
   .mainContainer {
     flex-direction: row;
   }
 
-  .splitContainer {
+  .leftContainer,
+  .rightContainer {
     width: 50%;
     height: 100vh;
   }
