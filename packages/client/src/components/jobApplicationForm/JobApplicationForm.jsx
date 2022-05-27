@@ -1,6 +1,8 @@
 import { useForm } from 'react-hook-form';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import styles from './JobApplicationForm.module.css';
+import moment from 'moment';
 
 const STEP_KEY_REGEX = /^(.+?)-([0-9]+)$/;
 
@@ -9,7 +11,11 @@ function CreationForm(props) {
     register,
     handleSubmit,
     formState: { errors },
+    setValue,
+    reset,
   } = useForm();
+
+  const { id } = useParams();
 
   const [steps, setSteps] = useState([]);
 
@@ -43,20 +49,65 @@ function CreationForm(props) {
         return arr;
       }, []);
 
-    fetch('/api/job-application', {
-      method: 'POST',
+    let url = '/api/job-application';
+    if (!props.isNew) url += '/' + id;
+
+    fetch(url, {
+      method: props.isNew ? 'POST' : 'PUT',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(finalData),
     })
       .then((reponse) => reponse.json())
       .then((json) => {
         if (!json.errors) {
-          console.log(json);
+          props.onUpdate && props.onUpdate();
         } else {
           console.error(json);
         }
       });
   };
+
+  const getDate = (date) => {
+    return date && moment(date).format('YYYY-MM-DD');
+  };
+
+  useEffect(() => {
+    if (!props.isNew) {
+      setSteps([]);
+      reset();
+
+      fetch(`/api/job-application/${id}`)
+        .then((reponse) => reponse.json())
+        .then((json) => {
+          if (!json.errors) {
+            setSteps(json.steps);
+
+            for (const key in json) {
+              if (key === 'date') {
+                setValue('date', getDate(json[key]));
+              } else if (key === 'steps') {
+                for (let i = 0; i < json[key].length; i++) {
+                  const step = json[key][i];
+
+                  setValue(`stepType-${i}`, step.stepType);
+                  setValue(`startDate-${i}`, getDate(step.startDate));
+                  setValue(`endDate-${i}`, getDate(step.endDate));
+
+                  if (step.location) {
+                    setValue(`locationType-${i}`, step.location.locationType);
+                    setValue(`details-${i}`, step.location.details);
+                  }
+                }
+              } else {
+                setValue(key, json[key]);
+              }
+            }
+          } else {
+            console.error(json);
+          }
+        });
+    }
+  }, [id, props.isNew]);
 
   return (
     <div className={styles.formGroup}>
