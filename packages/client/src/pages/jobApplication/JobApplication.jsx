@@ -9,11 +9,13 @@ import JobApplicationAddList from '../../components/JobApplicationAddList/JobApp
 function JobApplication() {
   const [data, setData] = useState([]);
 
-  useEffect(() => {
+  const handleUpdate = () => {
     fetch('/api/job-application')
       .then((res) => res.json())
       .then((res) => setData(res));
-  }, []);
+  };
+
+  useEffect(handleUpdate, []);
 
   return (
     <div className={styles.mainContainer}>
@@ -36,7 +38,7 @@ function JobApplication() {
             path="/new"
             element={
               <div className={styles.popup}>
-                <JobApplicationForm isNew />
+                <JobApplicationForm isNew onUpdate={handleUpdate} />
               </div>
             }
           />
@@ -44,7 +46,7 @@ function JobApplication() {
             path="/:id"
             element={
               <div className={styles.popup}>
-                <JobApplicationForm />
+                <JobApplicationForm onUpdate={handleUpdate} />
               </div>
             }
           />

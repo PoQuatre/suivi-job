@@ -159,7 +159,7 @@ router.get('/:id', param('id').isMongoId(), (req, res) => {
   }
 
   const id = req.params.id;
-  JobApplicationModel.finOne({ _id: id, ownerId: req.user._id })
+  JobApplicationModel.findOne({ _id: id, ownerId: req.user._id })
     .then((application) => {
       res.json(application);
     })
