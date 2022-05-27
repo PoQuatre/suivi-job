@@ -24,7 +24,6 @@
 .formBtn {
   display: flex;
   justify-content: center;
-  flex-direction: column;
   align-items: center;
   margin-top: 1rem;
 }
@@ -47,6 +46,41 @@
     #4481eb,
     #04befe,
     #3f86ed
+  );
+  box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+}
+
+.formBtn button {
+  width: 160px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+  height: 55px;
+  text-align: center;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 50px;
+  background-image: linear-gradient(
+    to right,
+    #25aae1,
+    #4481eb,
+    #04befe,
+    #3f86ed
+  );
+  box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+}
+
+.formBtn button:hover {
+  background-position: 100% 0;
+  transition: all 0.4s ease-in-out;
+  background-image: linear-gradient(
+    to right,
+    #124155,
+    #14294d,
+    #11556b,
+    #0d1726
   );
   box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
 }

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import JobApplicationList from '../../components/jobApplicationList/JobApplicationList';
-import CreationForm from '../../components/creationForm/CreationForm';
+import JobApplicationForm from '../../components/jobApplicationForm/JobApplicationForm';
 import { Navbar } from '../../components/navbar/Navbar';
 import styles from './jobApplication.module.css';
 
@@ -34,7 +34,7 @@ function JobApplication() {
             path="/new"
             element={
               <div className={styles.popup}>
-                <CreationForm />
+                <JobApplicationForm />
               </div>
             }
           />
@@ -42,7 +42,7 @@ function JobApplication() {
             path="/*"
             element={
               <div className={styles.popup}>
-                <CreationForm />
+                <JobApplicationForm />
               </div>
             }
           />
