@@ -4,6 +4,7 @@ import JobApplicationList from '../../components/jobApplicationList/JobApplicati
 import JobApplicationForm from '../../components/jobApplicationForm/JobApplicationForm';
 import { Navbar } from '../../components/navbar/Navbar';
 import styles from './jobApplication.module.css';
+import JobApplicationAddList from '../../components/JobApplicationAddList/JobApplicationAddList';
 
 function JobApplication() {
   const [data, setData] = useState([]);
@@ -17,10 +18,11 @@ function JobApplication() {
   return (
     <div className={styles.mainContainer}>
       <Navbar />
-      <div className={styles.splitContainer}>
+      <div className={styles.leftContainer}>
         <JobApplicationList list={data} />
+        <JobApplicationAddList className={styles.addButton} />
       </div>
-      <div className={styles.splitContainer}>
+      <div className={styles.rightContainer}>
         <Routes>
           <Route
             path="/"
