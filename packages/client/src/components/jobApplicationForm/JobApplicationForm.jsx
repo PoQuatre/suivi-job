@@ -4,7 +4,7 @@ import styles from './JobApplicationForm.module.css';
 
 const STEP_KEY_REGEX = /^(.+?)-([0-9]+)$/;
 
-function CreationForm() {
+function CreationForm(props) {
   const {
     register,
     handleSubmit,
@@ -60,6 +60,7 @@ function CreationForm() {
 
   return (
     <div className={styles.formGroup}>
+      {props.isNew && <h2>Ajout de candidature</h2>}
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className={styles.inputDataBase}>
           <div className={styles.inputLeft}>
@@ -202,14 +203,22 @@ function CreationForm() {
           );
         })}
 
-        <button onClick={() => setSteps((steps) => [...steps, {}])}>
-          Ajouter une étape
-        </button>
+        {props.isNew || (
+          <button onClick={() => setSteps((steps) => [...steps, {}])}>
+            Ajouter une étape
+          </button>
+        )}
 
-        <div className={styles.formBtn}>
-          <input type="submit" value="Ajouter" />
-          <button>Annuler</button>
-        </div>
+        {props.isNew ? (
+          <div className={styles.formBtn}>
+            <input type="submit" value="Ajouter" />
+          </div>
+        ) : (
+          <div className={styles.formBtn}>
+            <input type="submit" value="Sauvegarder" />
+            <button>Annuler</button>
+          </div>
+        )}
       </form>
     </div>
   );

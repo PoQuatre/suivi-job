@@ -34,7 +34,7 @@ function JobApplication() {
             path="/new"
             element={
               <div className={styles.popup}>
-                <JobApplicationForm />
+                <JobApplicationForm isNew />
               </div>
             }
           />
