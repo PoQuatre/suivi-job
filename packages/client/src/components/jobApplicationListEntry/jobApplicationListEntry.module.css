@@ -30,21 +30,21 @@ a {
 }
 
 .waiting {
-  background-color: bisque;
+  background-color: rgb(229, 229, 229);
   border-radius: 10px;
 }
 
 .accepted {
-  background-color: #70c24a;
+  background-color: rgb(183, 224, 164);
   border-radius: 10px;
 }
 
 .denied {
-  background-color: #c63131;
+  background-color: rgb(226, 152, 151);
   border-radius: 10px;
 }
 
 .noResponse {
-  background-color: #00d28c;
+  background-color: rgb(229, 229, 229);
   border-radius: 10px;
 }
