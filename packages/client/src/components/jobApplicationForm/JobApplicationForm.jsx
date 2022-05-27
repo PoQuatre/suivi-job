@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import styles from './JobApplicationForm.module.css';
 import moment from 'moment';
 
@@ -16,6 +16,7 @@ function CreationForm(props) {
   } = useForm();
 
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const [steps, setSteps] = useState([]);
 
@@ -61,17 +62,24 @@ function CreationForm(props) {
       .then((json) => {
         if (!json.errors) {
           props.onUpdate && props.onUpdate();
+          if (props.isNew) {
+            navigate('/' + json._id);
+          }
         } else {
           console.error(json);
         }
       });
   };
 
+  const getDateNow = () => {
+    return moment().format('YYYY-MM-DD');
+  };
+
   const getDate = (date) => {
     return date && moment(date).format('YYYY-MM-DD');
   };
 
-  useEffect(() => {
+  const handleReset = () => {
     if (!props.isNew) {
       setSteps([]);
       reset();
@@ -106,8 +114,14 @@ function CreationForm(props) {
             console.error(json);
           }
         });
+    } else {
+      setSteps([]);
+      reset();
+      setValue('date', getDateNow());
     }
-  }, [id, props.isNew]);
+  };
+
+  useEffect(handleReset, [id, props.isNew]);
 
   return (
     <div className={styles.formGroup}>
@@ -267,7 +281,14 @@ function CreationForm(props) {
         ) : (
           <div className={styles.formBtn}>
             <input type="submit" value="Sauvegarder" />
-            <button>Annuler</button>
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                handleReset();
+              }}
+            >
+              Annuler
+            </button>
           </div>
         )}
       </form>
