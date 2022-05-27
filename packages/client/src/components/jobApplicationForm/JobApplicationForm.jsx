@@ -71,11 +71,15 @@ function CreationForm(props) {
       });
   };
 
+  const getDateNow = () => {
+    return moment().format('YYYY-MM-DD');
+  };
+
   const getDate = (date) => {
     return date && moment(date).format('YYYY-MM-DD');
   };
 
-  useEffect(() => {
+  const handleReset = () => {
     if (!props.isNew) {
       setSteps([]);
       reset();
@@ -110,8 +114,14 @@ function CreationForm(props) {
             console.error(json);
           }
         });
+    } else {
+      setSteps([]);
+      reset();
+      setValue('date', getDateNow());
     }
-  }, [id, props.isNew]);
+  };
+
+  useEffect(handleReset, [id, props.isNew]);
 
   return (
     <div className={styles.formGroup}>
@@ -271,7 +281,14 @@ function CreationForm(props) {
         ) : (
           <div className={styles.formBtn}>
             <input type="submit" value="Sauvegarder" />
-            <button>Annuler</button>
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                handleReset();
+              }}
+            >
+              Annuler
+            </button>
           </div>
         )}
       </form>
