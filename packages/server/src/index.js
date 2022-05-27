@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const morgan = require('morgan');
 const compression = require('compression');
@@ -10,7 +12,14 @@ const AuthRouter = require('./routes/auth.route');
 const JobApplicationRouter = require('./routes/jobApplication.route');
 const SettingsRouter = require('./routes/settings.route');
 
-mongoose.connect('mongodb://localhost:27017/suivi-job');
+if (!process.env.MONGO_URL) {
+  throw new Error('The `MONGO_URL` environment variable is missing');
+}
+if (!process.env.SESSION_SECRET) {
+  throw new Error('The `SESSION_SECRET` environment variable is missing');
+}
+
+mongoose.connect(process.env.MONGO_URL);
 
 const app = express();
 
@@ -23,7 +32,7 @@ if (process.env.NODE_ENV === 'production') {
 
 app.use(
   session({
-    secret: 'MyAwesomeSecret',
+    secret: process.env.SESSION_SECRET,
     resave: true,
     saveUninitialized: false,
   }),
