@@ -131,4 +131,18 @@ router.post(
   },
 );
 
+router.get('/me', (req, res) => {
+  if (req.user) {
+    res.json({
+      success: true,
+      user: {
+        username: req.user.username,
+        email: req.user.email,
+      },
+    });
+  } else {
+    res.status(401).json({ success: false });
+  }
+});
+
 module.exports = router;

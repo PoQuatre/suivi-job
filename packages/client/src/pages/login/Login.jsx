@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../hooks/useAuth';
 
 const Login = () => {
   const {
@@ -10,6 +11,7 @@ const Login = () => {
   } = useForm();
   const navigate = useNavigate();
   const [globalError, setGlobalError] = useState('');
+  const { connect } = useAuth();
 
   const onSubmit = (data) => {
     setGlobalError('');
@@ -25,6 +27,7 @@ const Login = () => {
       .then((res) => {
         if (res.success) {
           navigate('/');
+          connect(res.user);
         } else {
           setGlobalError("L'email ou le mot de passe est invalide");
         }

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../hooks/useAuth';
 
 const Register = () => {
   const {
@@ -12,6 +13,7 @@ const Register = () => {
   } = useForm();
   const navigate = useNavigate();
   const [globalError, setGlobalError] = useState('');
+  const { connect } = useAuth();
 
   const onSubmit = (data) => {
     setGlobalError('');
@@ -29,6 +31,7 @@ const Register = () => {
       .then((res) => {
         if (res.success) {
           navigate('/');
+          connect(res.user);
         } else {
           for (const error of res.errors) {
             setError(error.location, { type: 'custom', message: error.cause });
