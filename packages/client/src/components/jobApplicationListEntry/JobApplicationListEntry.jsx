@@ -23,7 +23,7 @@ function jobApplicationListEntry(props) {
   };
 
   return (
-    <Link to={`/job-application/${props.id}`} key={props.id}>
+    <Link to={`/${props.id}`} key={props.id}>
       <div className={getColorClass()}>
         <div className={styles.ItemList}>
           <div>

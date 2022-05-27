@@ -39,7 +39,7 @@ function JobApplication() {
             }
           />
           <Route
-            path="/*"
+            path="/:id"
             element={
               <div className={styles.popup}>
                 <JobApplicationForm />
