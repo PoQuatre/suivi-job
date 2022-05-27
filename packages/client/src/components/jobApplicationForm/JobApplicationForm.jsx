@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
-import styles from './CreationForm.module.css';
+import styles from './JobApplicationForm.module.css';
 
 const STEP_KEY_REGEX = /^(.+?)-([0-9]+)$/;
 
