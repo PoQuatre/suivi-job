@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import styles from './JobApplicationForm.module.css';
 import moment from 'moment';
 
@@ -16,6 +16,7 @@ function CreationForm(props) {
   } = useForm();
 
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const [steps, setSteps] = useState([]);
 
@@ -61,6 +62,9 @@ function CreationForm(props) {
       .then((json) => {
         if (!json.errors) {
           props.onUpdate && props.onUpdate();
+          if (props.isNew) {
+            navigate('/' + json._id);
+          }
         } else {
           console.error(json);
         }
