@@ -59,6 +59,12 @@
   padding-inline: 1rem;
 }
 
+.position {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .footer {
   margin-block: 1rem;
   text-align: center;

@@ -6,7 +6,7 @@ import styles from './landingPageIcons.module.css';
 
 function LandingPageIcons(props) {
   return (
-    <div>
+    <div className={styles.position}>
       <a href={props.linkedin}>
         {' '}
         <LinkedinIcon />
