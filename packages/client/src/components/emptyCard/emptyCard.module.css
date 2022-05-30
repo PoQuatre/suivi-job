@@ -1,0 +1,11 @@
+.emptyForm {
+  background: #eed8b8;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  color: rgb(0, 0, 0);
+}
