@@ -84,7 +84,7 @@ const LandingPage = () => {
           <LandingPageCard
             image={Alpicture}
             title="AL"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nihil veritatis possimus dignissimos temporibus reiciendis, praesentium, adipisci dolorem pariatur reprehenderit commodi similique recusandae iusto libero neque nam magni. Nulla, iure."
+            description="En tant que développeur front-end,j'ai participé à l'élaboration d'un environement attractif et dynamique de l'application. Durant cette expérience ,j'ai put dévoloppé de nouveau acquis grace à mon équipe."
             git="https://github.com/Kar1004"
             linkedin="https://www.linkedin.com/in/abder-karamoko/"
             website="https://kar1004.github.io/portefolio-AL/"
@@ -92,7 +92,7 @@ const LandingPage = () => {
           <LandingPageCard
             image={Ethanpicture}
             title="Ethan SLIMANI"
-            description="Développeur full stack Back: Je me suis occupé de toutes les routes sauf celles du login et du register. Front:  J'ai chosis le thème (les couleurs) du site et j'ai crée la Navbar. J'ai aimé participé à ce projet avec cette équipe tout le monde a énormément participé et je suis heureux du resultat de notre travail."
+            description="Developpeur full stack: J'ai aimé participé à ce projet avec cette équipe tout le monde a énormément participé et je suis heureux du résultat de notre travail."
             git="https://github.com/SoraNoTami"
             linkedin="https://www.linkedin.com/in/ethan-slimani/"
             website="https://soranotami.github.io/Portfolio/"
@@ -100,7 +100,7 @@ const LandingPage = () => {
           <LandingPageCard
             image={Joelpicture}
             title="Joël MAMPOUYA"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nihil veritatis possimus dignissimos temporibus reiciendis, praesentium, adipisci dolorem pariatur reprehenderit commodi similique recusandae iusto libero neque nam magni. Nulla, iure."
+            description="Front-end et Back-end ,t'elles-ont été mes armes dans la création de cette application. Créatif et curieux ,j'ai été ravie que mon esprit d'initiative m'est permit de pouvoir présenter cette application qui aidera des gens ."
             git="https://github.com/Joelmpy"
             linkedin="https://www.linkedin.com/in/mampouya-joel/"
             website="https://joelmpy.github.io/"
@@ -108,7 +108,7 @@ const LandingPage = () => {
           <LandingPageCard
             image={Mateopicture}
             title="Matéo LE FLEM"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nihil veritatis possimus dignissimos temporibus reiciendis, praesentium, adipisci dolorem pariatur reprehenderit commodi similique recusandae iusto libero neque nam magni. Nulla, iure."
+            description="Ayant été lead dev ,je me suis occupé du front et du back. J'ai coordonné les différentes étapes en partant de la maquette , de la base de donnée et de l'environement attractif du site.Le travail d'équipes lors de la construction de l'application m'ont grandement appris. "
             git="https://github.com/PoQuatre"
             linkedin="https://www.linkedin.com/in/mateo-le-flem/"
             website="https://mateo-leflem.fr/"
