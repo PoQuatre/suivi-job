@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
+import styles from './login.module.css';
 
 const Login = () => {
   const {
@@ -41,43 +42,61 @@ const Login = () => {
   };
 
   return (
-    <>
-      {globalError && <p>{globalError}</p>}
+    <div className={styles.container}>
+      <div className={styles.card}>
+        <h1 className={styles.title}>Connexion</h1>
 
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div>
-          <label htmlFor="email">Email: </label>
-          <input
-            type="email"
-            placeholder="example@mail.org"
-            {...register('email', {
-              required: true,
-              pattern: /^[^\s@]+@([^\s@.,]+\.)+[^\s@.,]{2,}$/,
-            })}
-          />
-          {errors.email?.type === 'required' && (
-            <p>L'adresse email est requise.</p>
-          )}
-          {errors.email?.type === 'pattern' && (
-            <p>L'adresse email doit être valide.</p>
-          )}
-        </div>
+        {globalError && <p className={styles.globalError}>{globalError}</p>}
 
-        <div>
-          <label htmlFor="password">Mot de passe: </label>
-          <input
-            type="password"
-            placeholder="Votre mot de passe"
-            {...register('password', { required: true })}
-          />
-          {errors.password?.type === 'required' && (
-            <p>Le mot de passe est requis.</p>
-          )}
-        </div>
+        <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+          <div>
+            <label htmlFor="email" className={styles.input}>
+              <input
+                type="email"
+                placeholder="example@mail.org"
+                id="email"
+                required
+                {...register('email', {
+                  required: true,
+                  pattern: /^[^\s@]+@([^\s@.,]+\.)+[^\s@.,]{2,}$/,
+                })}
+              />
+              <span>Email</span>
+            </label>
 
-        <input type="submit" value="Se connecter" />
-      </form>
-    </>
+            {errors.email?.type === 'required' && (
+              <p className={styles.error}>L'adresse email est requise.</p>
+            )}
+            {errors.email?.type === 'pattern' && (
+              <p className={styles.error}>L'adresse email doit être valide.</p>
+            )}
+          </div>
+
+          <div>
+            <label htmlFor="password" className={styles.input}>
+              <input
+                type="password"
+                placeholder="Votre mot de passe"
+                id="password"
+                required
+                {...register('password', { required: true })}
+              />
+              <span>Mot de passe</span>
+            </label>
+
+            {errors.password?.type === 'required' && (
+              <p className={styles.error}>Le mot de passe est requis.</p>
+            )}
+          </div>
+
+          <input className={styles.button} type="submit" value="Se connecter" />
+          <Link className={styles.link} to="/register">
+            Pas encore de compte ?<br />
+            Cliquez ici pour en créer un
+          </Link>
+        </form>
+      </div>
+    </div>
   );
 };
 

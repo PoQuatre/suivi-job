@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import JobApplicationList from '../../components/jobApplicationList/JobApplicationList';
 import JobApplicationForm from '../../components/jobApplicationForm/JobApplicationForm';
-import { Navbar } from '../../components/navbar/Navbar';
 import styles from './jobApplication.module.css';
 import JobApplicationAddList from '../../components/JobApplicationAddList/JobApplicationAddList';
 
@@ -19,7 +18,6 @@ function JobApplication() {
 
   return (
     <div className={styles.mainContainer}>
-      <Navbar />
       <div className={styles.leftContainer}>
         <JobApplicationList list={data} />
         <JobApplicationAddList className={styles.addButton} />
