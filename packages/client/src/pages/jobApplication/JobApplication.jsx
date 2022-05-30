@@ -4,6 +4,7 @@ import JobApplicationList from '../../components/jobApplicationList/JobApplicati
 import JobApplicationForm from '../../components/jobApplicationForm/JobApplicationForm';
 import styles from './jobApplication.module.css';
 import JobApplicationAddList from '../../components/JobApplicationAddList/JobApplicationAddList';
+import EmptyCard from '../../components/emptyCard/EmptyCard';
 
 function JobApplication() {
   const [data, setData] = useState([]);
@@ -28,7 +29,7 @@ function JobApplication() {
             path="/"
             element={
               <div className={styles.desktopOnly}>
-                <h1>Nothing to show</h1>
+                <EmptyCard />
               </div>
             }
           />
