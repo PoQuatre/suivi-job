@@ -16,7 +16,10 @@ const JobApplicationSchema = new mongoose.Schema({
   typeJob: String,
   steps: [
     {
-      stepType: String,
+      stepType: {
+        type: String,
+        enum: ['Interview', 'Test'],
+      },
       startDate: Date,
       endDate: Date,
       location: {
