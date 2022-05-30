@@ -23,9 +23,10 @@ const JobApplicationSchema = new mongoose.Schema({
       startDate: Date,
       endDate: Date,
       location: {
-        locationType: String,
-        details: String,
+        type: String,
+        enum: ['Distancial', 'Tel', 'InPerson'],
       },
+      details: String,
     },
   ],
 });
