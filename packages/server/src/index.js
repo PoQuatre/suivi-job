@@ -11,6 +11,7 @@ const passport = require('./config/passport');
 const AuthRouter = require('./routes/auth.route');
 const JobApplicationRouter = require('./routes/jobApplication.route');
 const SettingsRouter = require('./routes/settings.route');
+const StatsRouter = require('./routes/stats.route');
 
 if (!process.env.MONGO_URL) {
   throw new Error('The `MONGO_URL` environment variable is missing');
@@ -44,6 +45,7 @@ app.use(passport.session());
 app.use('/auth', AuthRouter);
 app.use('/api/job-application', JobApplicationRouter);
 app.use('/api/settings', SettingsRouter);
+app.use('/api/stats', StatsRouter);
 
 registerClient(app); // Keep this line after all your routes
 
