@@ -91,7 +91,7 @@ const LandingPage = () => {
           />
           <LandingPageCard
             image={Ethanpicture}
-            title="Ethan Slimani"
+            title="Ethan SLIMANI"
             description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nihil veritatis possimus dignissimos temporibus reiciendis, praesentium, adipisci dolorem pariatur reprehenderit commodi similique recusandae iusto libero neque nam magni. Nulla, iure."
             git="https://github.com/SoraNoTami"
             linkedin="https://www.linkedin.com/in/ethan-slimani/"
@@ -99,7 +99,7 @@ const LandingPage = () => {
           />
           <LandingPageCard
             image={Joelpicture}
-            title="Joël Manpouya"
+            title="Joël MAMPOUYA"
             description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nihil veritatis possimus dignissimos temporibus reiciendis, praesentium, adipisci dolorem pariatur reprehenderit commodi similique recusandae iusto libero neque nam magni. Nulla, iure."
             git="https://github.com/Joelmpy"
             linkedin="https://www.linkedin.com/in/mampouya-joel/"
@@ -107,7 +107,7 @@ const LandingPage = () => {
           />
           <LandingPageCard
             image={Mateopicture}
-            title="Matéo Le Flem"
+            title="Matéo LE FLEM"
             description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nihil veritatis possimus dignissimos temporibus reiciendis, praesentium, adipisci dolorem pariatur reprehenderit commodi similique recusandae iusto libero neque nam magni. Nulla, iure."
             git="https://github.com/PoQuatre"
             linkedin="https://www.linkedin.com/in/mateo-le-flem/"
