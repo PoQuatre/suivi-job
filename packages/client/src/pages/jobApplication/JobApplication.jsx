@@ -28,7 +28,20 @@ function JobApplication() {
             path="/"
             element={
               <div className={styles.desktopOnly}>
-                <h1>Nothing to show</h1>
+                <div
+                  style={{
+                    borderRadius: '10px',
+                    minHeight: '100%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    backgroundColor: '#eed8b8',
+                  }}
+                >
+                  <p style={{ textAlign: 'center' }}>
+                    Cliquez sur ou créez une candidature pour l'afficher ici
+                  </p>
+                </div>
               </div>
             }
           />
