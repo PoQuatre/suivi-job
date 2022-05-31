@@ -11,7 +11,7 @@ function LandingPageCard(props) {
         <h3 className={styles.title}>{props.title}</h3>
         <p>{props.description}</p>
       </div>
-      <div>
+      <div className={styles.icons}>
         <LandingPageIcons
           linkedin={props.linkedin}
           git={props.git}
