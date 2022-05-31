@@ -4,16 +4,18 @@
 }
 .ItemList {
   display: grid;
-  grid-template-columns: 1fr 2fr 3rem 12ch;
+  grid-template-columns: 1fr 2fr 2rem 12ch;
   grid-template-rows: 1fr;
   justify-content: center;
   padding-left: 0.5rem;
 }
-svg {
+.icons svg {
   width: 100%;
+  stroke: black;
+  stroke-width: 2px;
 }
 
-svg:hover {
+.icons svg:hover {
   stroke: blue;
 }
 
