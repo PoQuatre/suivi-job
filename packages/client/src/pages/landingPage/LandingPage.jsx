@@ -98,7 +98,7 @@ const LandingPage = () => {
           <LandingPageCard
             image={Ethanpicture}
             title="Ethan SLIMANI"
-            description="Développeur Full Stack : j'ai aimé participer à ce projet avec cette équipe, tout le monde a énormément participé et je suis heureux du résultat de notre travail."
+            description="Développeur Full Stack : je me suis occupé de toutes les routes sauf celles de l'authentification. J'ai chosis le thème (les couleurs) de l'application. J'ai aimé participer à ce projet avec cette équipe tout le monde a énormément participé et je suis heureux du résultat de notre travail."
             git="https://github.com/SoraNoTami"
             linkedin="https://www.linkedin.com/in/ethan-slimani/"
             website="https://soranotami.github.io/Portfolio/"
