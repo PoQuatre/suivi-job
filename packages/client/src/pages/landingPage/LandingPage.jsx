@@ -80,7 +80,13 @@ const LandingPage = () => {
       <section className={styles.teamSection}>
         <h2 className={styles.sectionTitle}>Équipe</h2>
 
-        <Carousel breakPoints={breakPoints} disableArrowsOnEnd={false}>
+        <Carousel
+          breakPoints={breakPoints}
+          disableArrowsOnEnd={false}
+          className={styles.carousel}
+          renderPagination={() => <></>}
+          enableMouseSwipe={false}
+        >
           <LandingPageCard
             image={Alpicture}
             title="AL"
