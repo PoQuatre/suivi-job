@@ -124,118 +124,157 @@ function CreationForm(props) {
   useEffect(handleReset, [id, props.isNew]);
 
   return (
-    <div className={styles.formGroup}>
-      {props.isNew && <h2>Ajout de candidature</h2>}
+    <div className={styles.container}>
+      {props.isNew && <h2 className={styles.title}>Ajout de candidature</h2>}
+
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className={styles.inputDataBase}>
-          <div className={styles.inputLeft}>
-            <input
-              type="date"
-              className={styles.inputData}
-              {...register('date', {
-                required: true,
-              })}
-            />
+        <div className={styles.row}>
+          <div className={styles.inputContainer}>
+            <label htmlFor="date" className={styles.input}>
+              <input
+                type="date"
+                id="date"
+                required
+                className={styles.inputData}
+                {...register('date', {
+                  required: true,
+                })}
+              />
+              <span>Date de candidature</span>
+            </label>
             {errors.date?.type === 'required' && (
-              <span className={styles.span}>
+              <span className={styles.error}>
                 La date de candidature est requise
               </span>
             )}
           </div>
 
-          <div className={styles.inputRight}>
-            <select className={styles.inputData} {...register('state')}>
-              <option value="waiting">En Attente</option>
-              <option value="no-response">Sans Réponse</option>
-              <option value="denied">Refusé</option>
-              <option value="accepted">Accepté</option>
-            </select>
+          <div className={styles.inputContainer}>
+            <label htmlFor="state" className={styles.input}>
+              <select
+                className={styles.inputData}
+                id="state"
+                {...register('state')}
+              >
+                <option value="waiting">En Attente</option>
+                <option value="no-response">Sans Réponse</option>
+                <option value="denied">Refusé</option>
+                <option value="accepted">Accepté</option>
+              </select>
+              <span>État de la candidature</span>
+            </label>
           </div>
         </div>
 
         <div>
-          <input
-            type="text"
-            className={styles.formField}
-            placeholder="Nom de l'entreprise *"
-            {...register('company', {
-              required: true,
-            })}
-          />
+          <label htmlFor="company" className={styles.input}>
+            <input
+              type="text"
+              placeholder="example@mail.org"
+              id="company"
+              required
+              {...register('company', {
+                required: true,
+              })}
+            />
+            <span>Nom de l'entreprise</span>
+          </label>
+
           {errors.company?.type === 'required' && (
-            <span className={styles.span}>
+            <span className={styles.error}>
               Le nom de l'entreprise est requis
             </span>
           )}
         </div>
 
         <div>
-          <input
-            type="text"
-            className={styles.formField}
-            placeholder="CDI ? CDD ? Stage ?"
-            {...register('typeJob')}
-          />
-        </div>
+          <label htmlFor="titleJob" className={styles.input}>
+            <input
+              type="text"
+              placeholder="example@mail.org"
+              id="titleJob"
+              required
+              {...register('titleJob', {
+                required: true,
+              })}
+            />
+            <span>Titre de l'offre</span>
+          </label>
 
-        <div>
-          <input
-            type="text"
-            className={styles.formField}
-            placeholder="Titre du job *"
-            {...register('titleJob', {
-              required: true,
-            })}
-          />
           {errors.titleJob?.type === 'required' && (
-            <span className={styles.span}>Manque le nom du poste</span>
+            <span className={styles.error}>Manque le nom du poste</span>
           )}
         </div>
 
         <div>
-          <input
-            type="url"
-            className={styles.formField}
-            name="url"
-            id="url"
-            placeholder="https://example.com"
-            {...register('linkOffer', {
-              pattern: /^https?:\/\/.+$/,
-            })}
-          />
+          <label htmlFor="typeJob" className={styles.input}>
+            <input
+              type="text"
+              placeholder="example@mail.org"
+              id="typeJob"
+              {...register('typeJob')}
+            />
+            <span>CDI ? CDD ? Stage ?</span>
+          </label>
+        </div>
+
+        <div>
+          <label htmlFor="linkOffer" className={styles.input}>
+            <input
+              type="url"
+              placeholder="https://example.com"
+              id="linkOffer"
+              {...register('linkOffer', {
+                pattern: /^https?:\/\/.+$/,
+              })}
+            />
+            <span>Lien de l'offre</span>
+          </label>
+
           {errors.linkOffer?.type === 'pattern' && (
-            <span className={styles.span}>Veuillez entrer un lien valide</span>
+            <span className={styles.error}>Veuillez entrer un lien valide</span>
           )}
         </div>
 
         <div>
-          <input
-            type="text"
-            className={styles.formField}
-            placeholder="Adresse de l'entreprise"
-            {...register('adress')}
-          />
+          <label htmlFor="adress" className={styles.input}>
+            <input
+              type="text"
+              placeholder="address"
+              id="adress"
+              {...register('adress')}
+            />
+            <span>Adresse de l'entreprise</span>
+          </label>
         </div>
 
         <div>
-          <input
-            type="text"
-            className={styles.formField}
-            placeholder="Contact"
-            {...register('contact')}
-          />
+          <label htmlFor="contact" className={styles.input}>
+            <input
+              type="url"
+              placeholder="https://example.com"
+              id="contact"
+              {...register('contact')}
+            />
+            <span>Contact</span>
+          </label>
         </div>
 
         <div>
-          <textarea
-            className={styles.inputDescription}
-            placeholder="Description de l'entreprise"
-            {...register('description', {
-              maxLength: 2000,
-            })}
-          />
+          <label htmlFor="description" className={styles.input}>
+            <textarea
+              type="text"
+              placeholder="description"
+              id="description"
+              {...register('description', {
+                maxLength: 2000,
+              })}
+            />
+            <span>Description</span>
+          </label>
+
           {errors.description?.type === 'maxLength' && (
-            <span className={styles.span}>
+            <span className={styles.error}>
               La description dois faire maximum 2000 caractères
             </span>
           )}
@@ -275,13 +314,16 @@ function CreationForm(props) {
         )}
 
         {props.isNew ? (
-          <div className={styles.formBtn}>
-            <input type="submit" value="Ajouter" />
-          </div>
+          <input type="submit" value="Ajouter" className={styles.button} />
         ) : (
-          <div className={styles.formBtn}>
-            <input type="submit" value="Sauvegarder" />
+          <div className={styles.row}>
+            <input
+              type="submit"
+              value="Sauvegarder"
+              className={styles.button}
+            />
             <button
+              className={styles.button}
               onClick={(e) => {
                 e.preventDefault();
                 handleReset();
