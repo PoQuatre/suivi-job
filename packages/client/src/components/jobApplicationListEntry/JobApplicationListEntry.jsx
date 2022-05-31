@@ -31,10 +31,10 @@ function jobApplicationListEntry(props) {
       onClick={() => navigate(`/${props.id}`)}
     >
       <div className={styles.ItemList}>
-        <div>
-          <p className={styles.enterprise}>{props.enterprise}</p>
+        <div className={styles.textContainer}>
+          <p className={styles.entreprise}>{props.enterprise}</p>
         </div>
-        <div>
+        <div className={styles.textContainer}>
           <p className={styles.titleJob}>{props.titleJob}</p>
         </div>
         <div className={styles.icons}>

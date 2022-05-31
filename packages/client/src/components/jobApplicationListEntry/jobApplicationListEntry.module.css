@@ -8,6 +8,7 @@
   grid-template-rows: 1fr;
   justify-content: center;
   padding-left: 0.5rem;
+  white-space: nowrap;
 }
 .icons svg {
   width: 100%;
@@ -27,7 +28,8 @@
   display: none;
 }
 .entreprise {
-  width: 20%;
+  white-space: nowrap;
+  overflow: hidden;
   text-overflow: ellipsis;
 }
 
@@ -65,4 +67,10 @@ a {
 .noResponse {
   background-color: rgb(229, 229, 229);
   border-radius: 10px;
+}
+
+.textContainer {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
