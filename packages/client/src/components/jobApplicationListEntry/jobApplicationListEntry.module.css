@@ -4,10 +4,26 @@
 }
 .ItemList {
   display: grid;
-  grid-template-columns: 1fr 2fr 12ch;
+  grid-template-columns: 1fr 2fr 3rem 12ch;
   grid-template-rows: 1fr;
+  justify-content: center;
+  padding-left: 0.5rem;
+}
+svg {
+  width: 100%;
 }
 
+svg:hover {
+  stroke: blue;
+}
+
+.icons {
+  display: block;
+  margin-block: auto;
+}
+.IconsNone {
+  display: none;
+}
 .entreprise {
   width: 20%;
   text-overflow: ellipsis;

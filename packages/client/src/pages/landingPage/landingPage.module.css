@@ -64,6 +64,10 @@
   text-align: center;
 }
 
+.carousel :global(.rec-item-wrapper) {
+  height: 100%;
+}
+
 @media screen and (min-width: 600px) {
   .navbarContent {
     flex-direction: row;

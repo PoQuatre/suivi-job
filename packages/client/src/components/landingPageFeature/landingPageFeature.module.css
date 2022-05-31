@@ -21,9 +21,14 @@
     flex-direction: row-reverse;
   }
 
+  .container img {
+    width: 60%;
+  }
+
   .description {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 40%;
   }
 }
