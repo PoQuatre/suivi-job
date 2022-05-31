@@ -8,10 +8,16 @@
 .leftContainer,
 .rightContainer {
   overflow-y: auto;
+  padding: 1rem;
+}
+
+.rightContainer {
+  padding-left: 0.5rem;
 }
 
 .leftContainer {
-  position: relative;
+  padding-right: 0.5rem;
+  padding-bottom: 5rem;
 }
 
 .desktopOnly {
@@ -29,7 +35,7 @@
 }
 
 .addButton {
-  position: absolute;
+  position: fixed;
   bottom: 1rem;
   left: 1rem;
 }
