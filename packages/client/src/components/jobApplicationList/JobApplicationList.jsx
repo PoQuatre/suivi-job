@@ -17,6 +17,7 @@ function JobApplicationList(props) {
             enterprise={item.company}
             titleJob={item.titleJob}
             date={item.date}
+            url={item.linkOffer}
             className={styles.itemList}
             onDelete={() => deleteTodo(item.id)}
           />

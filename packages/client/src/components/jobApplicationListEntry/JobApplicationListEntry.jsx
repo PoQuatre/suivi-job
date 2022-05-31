@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './jobApplicationListEntry.module.css';
 import moment from 'moment';
 import { Route, Link, Router } from 'react-router-dom';
+import GlobeIcon from '../icons/GlobeIcon';
 
 function jobApplicationListEntry(props) {
   const getColorClass = () => {
@@ -31,6 +32,14 @@ function jobApplicationListEntry(props) {
           </div>
           <div>
             <p className={styles.titleJob}>{props.titleJob}</p>
+          </div>
+          <div className={styles.icons}>
+            {props.url ? (
+              <a href={props.url} target="_blank">
+                {' '}
+                <GlobeIcon />
+              </a>
+            ) : null}
           </div>
           <div>
             <p className={styles.date}>{getDate(props.date)}</p>
