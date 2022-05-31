@@ -316,7 +316,7 @@ function CreationForm(props) {
         {props.isNew ? (
           <input type="submit" value="Ajouter" className={styles.button} />
         ) : (
-          <div className={styles.row}>
+          <div className={`${styles.row} ${styles.rowBtn}`}>
             <input
               type="submit"
               value="Sauvegarder"

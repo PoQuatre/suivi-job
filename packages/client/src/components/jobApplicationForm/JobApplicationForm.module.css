@@ -13,7 +13,12 @@
 
 .row {
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 0rem;
+}
+
+.rowBtn {
+  margin-top: 3rem;
 }
 
 .inputContainer {
@@ -81,7 +86,6 @@
   width: 100%;
   max-width: 256px;
   display: block;
-  margin-top: 3rem;
   margin-bottom: 2rem;
   margin-inline: auto;
   outline: none;
@@ -115,4 +119,11 @@
   margin-top: 3px;
   margin-left: 0.85rem;
   color: #c33737;
+}
+
+@media screen and (min-width: 768px) {
+  .row {
+    flex-direction: row;
+    gap: 1rem;
+  }
 }
