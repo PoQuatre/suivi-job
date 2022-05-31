@@ -280,7 +280,7 @@ function CreationForm(props) {
           )}
         </div>
 
-        {steps.map((element, i) => {
+        {/* {steps.map((element, i) => {
           return (
             <>
               <select {...register(`stepType-${i}`, { required: true })}>
@@ -311,7 +311,7 @@ function CreationForm(props) {
           <button onClick={() => setSteps((steps) => [...steps, {}])}>
             Ajouter une étape
           </button>
-        )}
+        )} */}
 
         {props.isNew ? (
           <input type="submit" value="Ajouter" className={styles.button} />
