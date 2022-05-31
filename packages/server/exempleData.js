@@ -8,7 +8,7 @@ mongoose.connect(process.env.MONGO_URL);
 
 const user = new UserModel({
   username: 'Pierre',
-  email: 'pierr2feu@gmail.com',
+  email: 'pierre2feu@gmail.com',
   password: '$2b$12$c0g4LVPVD07lqTO4gbx0xuZvhVi/Qmxjmjl.L8JaupN3WooBqNrn6',
   jobApplications: [],
 });
@@ -59,7 +59,6 @@ const myJobApplications = [
     description: '',
     titleJob: 'Stagiaire Développeur Backend',
     linkOffer: '',
-    address: String,
     contact: '0681340988',
     date: new Date('2022-05-12'),
     typeJob: 'Stage',
@@ -91,7 +90,6 @@ const myJobApplications = [
     linkOffer:
       'https://www.linkedin.com/jobs/view/3072663549/?alternateChannel=search&refId=%2BnWje4%2FDFsNMRMkGANVCsg%3D%3D&trackingId=8YigEObWBP%2BuIXiuZgPBTA%3D%3D',
     address: 'Paris, Île-de-France, France',
-    contact: String,
     date: new Date('2022-05-30'),
     typeJob: 'CDI',
     steps: [],
@@ -105,8 +103,6 @@ const myJobApplications = [
     titleJob: 'Développeur(se) Fullstack PHP / JS (stage)',
     linkOffer:
       'https://www.welcometothejungle.com/fr/companies/ticketac/jobs/developpeur-se-backend-php-stage_paris',
-    address: String,
-    contact: String,
     date: new Date('2022-05-30'),
     typeJob: 'Stage',
     steps: [
@@ -125,7 +121,7 @@ const myJobApplications = [
     company: 'BureauxLocaux',
     description:
       'Afin de continuer notre croissance, nous recherchons une ou un développeur fullstack stagiaire qui sera en charge d’implémenter de nouvelles fonctionnalités uniques basées sur les technologies Django / React pour notre plateforme. Le stage portera sur tous les aspects du site, notamment la refonte de pages importantes de notre site comme les résultats de recherche et le parcours de renouvellement PEL (paiement en ligne). Le stage pourra déboucher sur une embauche si la collaboration est fructueuse.',
-    titleJob: 'Stage - Développeur web fullstack Django (RESTful) / ReactJS',
+    titleJob: 'Stage - Développeur web fullstack ReactJS',
     linkOffer:
       'https://www.linkedin.com/jobs/collections/recommended/?currentJobId=3028455971',
     address: 'Paris',
