@@ -4,16 +4,19 @@
 }
 .ItemList {
   display: grid;
-  grid-template-columns: 1fr 2fr 3rem 12ch;
+  grid-template-columns: 1fr 2fr 2rem 12ch;
   grid-template-rows: 1fr;
   justify-content: center;
   padding-left: 0.5rem;
+  white-space: nowrap;
 }
-svg {
+.icons svg {
   width: 100%;
+  stroke: black;
+  stroke-width: 2px;
 }
 
-svg:hover {
+.icons svg:hover {
   stroke: blue;
 }
 
@@ -25,7 +28,8 @@ svg:hover {
   display: none;
 }
 .entreprise {
-  width: 20%;
+  white-space: nowrap;
+  overflow: hidden;
   text-overflow: ellipsis;
 }
 
@@ -63,4 +67,10 @@ a {
 .noResponse {
   background-color: rgb(229, 229, 229);
   border-radius: 10px;
+}
+
+.textContainer {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }

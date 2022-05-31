@@ -1,10 +1,11 @@
 import React from 'react';
 import styles from './jobApplicationListEntry.module.css';
 import moment from 'moment';
-import { Route, Link, Router } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import GlobeIcon from '../icons/GlobeIcon';
 
 function jobApplicationListEntry(props) {
+  const navigate = useNavigate();
   const getColorClass = () => {
     if (props.state === 'waiting') {
       return styles.waiting;
@@ -24,32 +25,30 @@ function jobApplicationListEntry(props) {
   };
 
   return (
-    <Link to={`/${props.id}`} key={props.id}>
-      <div className={getColorClass()}>
-        <div className={styles.ItemList}>
-          <div>
-            <p className={styles.enterprise}>{props.enterprise}</p>
-          </div>
-          <div>
-            <p className={styles.titleJob}>{props.titleJob}</p>
-          </div>
-          <div className={styles.icons}>
-            {props.url ? (
-              <a href={props.url} target="_blank">
-                {' '}
-                <GlobeIcon />
-              </a>
-            ) : null}
-          </div>
-          <div>
-            <p className={styles.date}>{getDate(props.date)}</p>
-          </div>
-          {/* <d>
-          <button onClick={props.onDelete}>delete</button>
-        </td> */}
+    <div
+      className={getColorClass()}
+      style={{ cursor: 'pointer' }}
+      onClick={() => navigate(`/${props.id}`)}
+    >
+      <div className={styles.ItemList}>
+        <div className={styles.textContainer}>
+          <p className={styles.entreprise}>{props.enterprise}</p>
+        </div>
+        <div className={styles.textContainer}>
+          <p className={styles.titleJob}>{props.titleJob}</p>
+        </div>
+        <div className={styles.icons}>
+          {props.url ? (
+            <a href={props.url} target="_blank">
+              <GlobeIcon />
+            </a>
+          ) : null}
+        </div>
+        <div>
+          <p className={styles.date}>{getDate(props.date)}</p>
         </div>
       </div>
-    </Link>
+    </div>
   );
 }
 
