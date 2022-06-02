@@ -99,6 +99,23 @@
   text-align: center;
   transition: box-shadow 250ms ease-in-out, background-color 250ms ease-in-out;
 }
+.buttonDelete {
+  width: 100%;
+  max-width: 100px;
+  display: block;
+  margin-bottom: 2rem;
+  margin-inline: auto;
+  outline: none;
+  padding-block: 0.5rem;
+  padding-inline: 0.75rem;
+  border: #b8947f solid 1px;
+  background-color: #fbf5ed;
+  border-radius: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+  transition: box-shadow 250ms ease-in-out, background-color 250ms ease-in-out;
+}
 
 .button:focus {
   outline: none;
@@ -126,4 +143,9 @@
     flex-direction: row;
     gap: 1rem;
   }
+}
+
+.buttonDelete svg {
+  fill: red;
+  height: 1rem;
 }
