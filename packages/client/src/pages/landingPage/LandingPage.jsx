@@ -9,6 +9,7 @@ import Mateopicture from '../../assets/landingPage/Mateo.png';
 import LandingPageFeature from '../../components/landingPageFeature/LandingPageFeature';
 import ImgFonction1 from '../../assets/landingPage/fonction-1.png';
 import ImgFonction2 from '../../assets/landingPage/fonction-2.png';
+import ImgHeader from '../../assets/landingPage/landing-page.jpg';
 import pictureFake from '../../assets/landingPage/newFarm.jpg';
 import LandingPageIcons from '../../components/landingPageIcons/LandingPageIcons';
 
@@ -43,7 +44,7 @@ const LandingPage = () => {
 
       <header
         className={styles.header}
-        style={{ backgroundImage: `url(${pictureFake})` }}
+        style={{ backgroundImage: `url(${ImgHeader})` }}
       >
         <p className={styles.headerText}>
           Nous avons créé cette application pour aider toutes les personnes en
