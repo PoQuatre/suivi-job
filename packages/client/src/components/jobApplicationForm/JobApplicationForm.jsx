@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import styles from './JobApplicationForm.module.css';
 import moment from 'moment';
+import CloseIcon from '../icons/CloseIcon';
 
 const STEP_KEY_REGEX = /^(.+?)-([0-9]+)$/;
 
@@ -125,6 +126,10 @@ function CreationForm(props) {
 
   return (
     <div className={styles.container}>
+      <button className={styles.closeBtn} onClick={() => navigate('/')}>
+        <CloseIcon />
+      </button>
+
       {props.isNew && <h2 className={styles.title}>Ajout de candidature</h2>}
 
       <form onSubmit={handleSubmit(onSubmit)}>
