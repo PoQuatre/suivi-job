@@ -330,32 +330,35 @@ function CreationForm(props) {
           </button>
         )} */}
 
-        {props.isNew ? (
-          <input type="submit" value="Ajouter" className={styles.button} />
-        ) : (
-          <div className={`${styles.row} ${styles.rowBtn}`}>
-            <input
-              type="submit"
-              value="Sauvegarder"
-              className={styles.button}
-            />
-            <button
-              className={styles.button}
-              onClick={(e) => {
-                e.preventDefault();
-                handleReset();
-              }}
-            >
-              Annuler
-            </button>
-            <button
-              className={styles.buttonDelete}
-              onClick={deleteJobApplication}
-            >
-              <DeleteIcon />
-            </button>
-          </div>
-        )}
+        <div className={`${styles.row} ${styles.rowBtn}`}>
+          {props.isNew ? (
+            <input type="submit" value="Ajouter" className={styles.button} />
+          ) : (
+            <>
+              <input
+                type="submit"
+                value="Sauvegarder"
+                className={styles.button}
+              />
+              <button
+                className={styles.button}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleReset();
+                  navigate('/');
+                }}
+              >
+                Annuler
+              </button>
+              <button
+                className={styles.buttonDelete}
+                onClick={deleteJobApplication}
+              >
+                <DeleteIcon />
+              </button>
+            </>
+          )}
+        </div>
       </form>
     </div>
   );
