@@ -13,11 +13,12 @@
 .icons svg {
   width: 100%;
   stroke: black;
-  stroke-width: 2px;
+  stroke-width: 1px;
+  transition: stroke-width 150ms ease-in-out;
 }
 
-.icons svg:hover {
-  stroke: blue;
+.icons a:hover svg {
+  stroke-width: 2px;
 }
 
 .icons {
@@ -33,7 +34,7 @@
   text-overflow: ellipsis;
 }
 
-a {
+.icons a {
   text-decoration: none;
   color: black;
 }
