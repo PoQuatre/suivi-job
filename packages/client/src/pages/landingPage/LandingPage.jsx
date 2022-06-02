@@ -7,6 +7,8 @@ import Ethanpicture from '../../assets/landingPage/Ethan.png';
 import Joelpicture from '../../assets/landingPage/Joel.png';
 import Mateopicture from '../../assets/landingPage/Mateo.png';
 import LandingPageFeature from '../../components/landingPageFeature/LandingPageFeature';
+import ImgFonction1 from '../../assets/landingPage/fonction-1.png';
+import ImgFonction2 from '../../assets/landingPage/fonction-2.png';
 import pictureFake from '../../assets/landingPage/newFarm.jpg';
 import LandingPageIcons from '../../components/landingPageIcons/LandingPageIcons';
 
@@ -60,14 +62,14 @@ const LandingPage = () => {
         <h2 className={styles.sectionTitle}>Fonctionnalités</h2>
 
         <LandingPageFeature
-          title="Page d'Acceuil"
+          title="Liste de candidature"
           description="Connectez-vous pour avoir accès à votre page perso et voir vos candidatures."
-          image={pictureFake}
+          image={ImgFonction1}
         />
         <LandingPageFeature
-          title="Candidature"
+          title="Formulaire"
           description="Ajoutez, modifiez et supprimez des candidatures grâce à un formulaire. Vous pouvez ajouter des étapes (entretiens, tests techniques, essais) à vos candidatures."
-          image={pictureFake}
+          image={ImgFonction2}
         />
       </section>
 
