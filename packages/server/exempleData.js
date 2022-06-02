@@ -82,6 +82,34 @@ const myJobApplications = [
   },
   {
     ownerId: user._id,
+    state: 'waiting',
+    company: 'CraftIA',
+    description: '',
+    titleJob: 'Stagiaire Développeur Backend',
+    linkOffer: '',
+    contact: '0681340988',
+    date: new Date('2022-05-12'),
+    typeJob: 'Stage',
+    steps: [
+      {
+        stepType: 'Test',
+        startDate: new Date('2022-05-12'),
+        endDate: new Date('2022-05-17'),
+        location: 'Distancial',
+        details:
+          "Crée une fonstion qui calcule la racine carré d'un chiffre entier",
+      },
+      {
+        stepType: 'Interview',
+        startDate: new Date('2022-05-20'),
+        endDate: new Date('2022-05-20'),
+        location: 'InPerson',
+        details: '',
+      },
+    ],
+  },
+  {
+    ownerId: user._id,
     state: 'denied',
     company: 'TheFork',
     description:
