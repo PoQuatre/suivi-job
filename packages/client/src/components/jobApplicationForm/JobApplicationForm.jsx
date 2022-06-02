@@ -4,6 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import styles from './JobApplicationForm.module.css';
 import moment from 'moment';
 import CloseIcon from '../icons/CloseIcon';
+import DeleteIcon from '../icons/DeleteIcon';
 
 const STEP_KEY_REGEX = /^(.+?)-([0-9]+)$/;
 
@@ -120,6 +121,15 @@ function CreationForm(props) {
       reset();
       setValue('date', getDateNow());
     }
+  };
+
+  const deleteJobApplication = () => {
+    fetch('/api/job-application/' + id, {
+      method: 'DELETE',
+    }).then(() => {
+      props.onUpdate && props.onUpdate();
+      navigate('/');
+    });
   };
 
   useEffect(handleReset, [id, props.isNew]);
@@ -335,6 +345,12 @@ function CreationForm(props) {
               }}
             >
               Annuler
+            </button>
+            <button
+              className={styles.buttonDelete}
+              onClick={deleteJobApplication}
+            >
+              <DeleteIcon />
             </button>
           </div>
         )}
