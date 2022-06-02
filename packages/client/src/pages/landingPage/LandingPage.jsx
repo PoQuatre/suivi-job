@@ -8,7 +8,6 @@ import Joelpicture from '../../assets/landingPage/Joel.png';
 import Mateopicture from '../../assets/landingPage/Mateo.png';
 import LandingPageFeature from '../../components/landingPageFeature/LandingPageFeature';
 import pictureFake from '../../assets/landingPage/newFarm.jpg';
-import LandingPageIcons from '../../components/landingPageIcons/LandingPageIcons';
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
@@ -24,7 +23,6 @@ const LandingPage = () => {
         <div className={styles.navbarContent}>
           <div className={styles.navTitle}>
             <h1>Suivi Job</h1>
-            <img src="" alt="Logo" />
           </div>
 
           <ul className={styles.nav}>
