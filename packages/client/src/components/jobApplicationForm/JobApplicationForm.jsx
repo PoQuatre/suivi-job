@@ -66,6 +66,8 @@ function CreationForm(props) {
           props.onUpdate && props.onUpdate();
           if (props.isNew) {
             navigate('/' + json._id);
+          } else {
+            navigate('/');
           }
         } else {
           console.error(json);
