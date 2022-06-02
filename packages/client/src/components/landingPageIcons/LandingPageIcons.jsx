@@ -12,7 +12,7 @@ function LandingPageIcons(props) {
       <a href={props.git} className={styles.icon}>
         <GithubIcon />
       </a>
-      <a href={props.website} className={styles.icon}>
+      <a href={props.website} className={styles.globe}>
         <GlobeIcon />
       </a>
     </div>

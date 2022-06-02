@@ -1,5 +1,12 @@
 .icon svg {
   max-width: 32px;
+  fill: black;
+}
+
+.globe svg {
+  max-width: 32px;
+  stroke-width: 2px;
+  stroke: black;
 }
 
 .position {
