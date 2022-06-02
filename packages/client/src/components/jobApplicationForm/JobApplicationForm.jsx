@@ -266,7 +266,7 @@ function CreationForm(props) {
         <div>
           <label htmlFor="contact" className={styles.input}>
             <input
-              type="url"
+              type="text"
               placeholder="https://example.com"
               id="contact"
               {...register('contact')}
